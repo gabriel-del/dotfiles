@@ -186,4 +186,4 @@ alias vc 'VBoxManage controlvm'
 alias vw 'VBoxManage controlvm windows'
 
 #git remote add origin git@github.com:gabriel-del/ecommerce-example.git
-
+alias config '/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'

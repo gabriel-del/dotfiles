@@ -8,3 +8,4 @@ if [ -f ~/.aliases.sh ]; then
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+

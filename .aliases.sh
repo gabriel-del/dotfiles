@@ -152,5 +152,10 @@ alias vb='VBoxManage'
 alias vc='VBoxManage controlvm'
 alias vw='VBoxManage controlvm windows'
 
+
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias ls='colorls'
+
+
 #git remote add origin git@github.com:gabriel-del/ecommerce-example.git
 
