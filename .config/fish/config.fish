@@ -9,12 +9,11 @@ end
 
 function c
 	cd (colorls -1d | cut -d' ' -f7 | grep "$argv[1]" | sed -n ([ -n "$argv[2]" ] ;and echo "$argv[2]" ;or echo 1)p)
-	colorls
+	ls
 end
 
 function gg
 	[ "$PWD" = "$HOME" ] ; and  set COMMAND config ; or set COMMAND git
-	# $COMMAND add . 
 	$COMMAND commit -a -m ([ -n "$argv[1]" ] ; and echo "$argv" ;or date +%F=%T)
 	$COMMAND push 
 end

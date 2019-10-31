@@ -17,7 +17,6 @@ fi
 
 #navegação
 
-alias gs='git status'
 Ld() { tre -pL 1 $* | grep '^\[[d|l]' | cut -d' ' -f 3- | sed "s/ -> .*//g" ;}
 La() { tre -pL 1 $* | grep '^\[[-|l]' | cut -d' ' -f 3- | sed "s/ -> .*//g" ;}
 F() { ls | grep "$*" | sed -n 1p ;}
@@ -38,6 +37,7 @@ out() { sudo pkill -u $USER ;}
 
 #git
 gg() { git add . ; git commit -m "$([[ $# -eq 0 ]] && echo $(date +%F=%T) || echo $@)" ; git push;}
+alias gs='git status'
 
 
 
