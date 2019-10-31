@@ -1,9 +1,9 @@
-path=(
+export path2="
 /bin
 ~/.gem/ruby/2.4.0/bin
-# ~/.bin
-# ~/.scripts
-#/home/linuxbrew/.linuxbrew/bin
+~/.bin
+~/.scripts
+/home/linuxbrew/.linuxbrew/bin
 ~/.go/bin
 /usr/local/bin
 /usr/local/sbin
@@ -25,14 +25,18 @@ path=(
 ~/.config/yarn/global/node_modules/.bin
 /opt/andoird-sdk/tools
 /opt/andoird-sdk/platform-tools
-
-#/opt/blender
+/usr/bin/site_perl
+/usr/bin/vendor_perl
+/usr/bin/core_perl
+/opt/blender
 ~/.go/bin
-)
-export PATH="$(echo ${path[*]} | sed 's/ /:/g')"
+/opt/andoid-sdk/tools
+/opt/andoid-sdk/platform-tools
+"
+
 export GOPATH="$HOME/.go"
 export WEKA_HOME="$HOME/.wekafiles"
-
+export ANDROID_HOME=/opt/android-sdk
 
 #Manuais
 export EDITOR="/usr/bin/vim"
@@ -55,9 +59,7 @@ alias df='df -h'
 alias cp='cp -vr'
 alias bd=". bd -si"
 alias rm='rm -rv'
-which vimx &> /dev/null && alias vim='vimx'
-#-u ~/.vim/vimrc'
-alias ranger='ranger --choosedir=$HOME/.rangerdir;cd "$(cat $HOME/.rangerdir)"'
+# alias ranger='ranger --choosedir=$HOME/.rangerdir;cd "$(cat $HOME/.rangerdir)"'
 alias yay="sudo -u duser yay"
 alias trizen="sudo -u visita trizen"
 
@@ -78,7 +80,7 @@ alias bb='vim ~/.bashrc'
 alias bp='vim ~/.bash_profile'
 alias ss='systemctl suspend -i'
 # alias ss="sudo pm-suspend"
-alias cdr='cd - &> /dev/null'
+# alias cdr='cd - &> /dev/null'
 #alias ss='set +x && set +x'
 alias tempo="curl http://wttr.in/$(basename "$(ls -l | grep localtime | cut -d'>' -f2-)")"
 alias pop='Popcorn-Time'
@@ -96,35 +98,9 @@ alias dddd='sdcv -c'
 alias d="pacman -S --noconfirm"
 alias ds="pacman -Ss"
 
-#navegação
-
-Ld() { tre -pL 1 $* | grep '^\[[d|l]' | cut -d' ' -f 3- | sed "s/ -> .*//g" ;}
-La() { tre -pL 1 $* | grep '^\[[-|l]' | cut -d' ' -f 3- | sed "s/ -> .*//g" ;}
-F() { ls | grep "$*" | sed -n 1p ;}
-cc() { [[ -n "${!1}" ]] && cd ${!1} && ls || echo "Não encontrado";}
-c() { cd  "$(Ld | grep "$1" | sed -n "$([[ -n $2 ]] && echo $2 || echo 1 )"p)" ; ls;}
-v() { vim "$(La | grep "$1" | sed -n "$([[ -n $2 ]] && echo $2 || echo 1 )"p)" ;}
-#g() { gedit "$(La | grep "$1" | sed -n "$([[ -n $2 ]] && echo $2 || echo 1 )"p)" ;}
-CD() { select i in $(Ld $* | sed 's/ /"-"/g'); do cd "$(echo "$i" | sed 's/"-"/ /')"; break ;done ;}
 
 
 
-
-#utilidade
-lns() { ln -s "$(pwd)/$1" "$1"-2 ;}
-tre() { tree -fi $* | sed -n "2,+$(tree -fi $* | sed '1,4'd | wc -l)"p ;} 
-tres() { for i in $(tre); do [[ -f "$i" ]] && [[ -n "$(cat "$i" | grep "$*")" ]] && echo "$i" ;done ;}
-ext() { cont="$(echo "${!1}" | sed "s/\./\n/g" | wc -l)" ; [[ "$cont" -gt 1 ]] && let cont--;
-    export "$1"="$(echo "${!1}" |cut -d. -f-"$cont")" ;}
-pen() { sudo pv "$(pwd)/$1" | sudo dd of=/dev/sdb ;}
-out() { sudo pkill -u $USER ;}
-
-#git
-# unalias gc
-gg() { git add . ; git commit -m "$([[ $# -eq 0 ]] && echo $(date +%F=%T) || echo $@)" ; git push;}
-# G() { git add . 
-  # git commit -m "$(date +%F=%T)"
-  # git push origin master ;}
 alias gs='git status'
 
 #Tmux
@@ -133,11 +109,6 @@ alias tn='tmux new -s'
 alias tl='tmux ls'
 
 
-#Erros
-xmo2() { set -x;  echo "pointer = 1 2 3 5 4 7 6 8 9 10 11 12" > ~/.Xmodmap && xmodmap ~/.Xmodmap &> /dev/null ;set +x;}
-xmo1() { set -x; echo "pointer = 1 2 3 4 5 6 7 8 9 10 11 12" > ~/.Xmodmap && xmodmap ~/.Xmodmap &> /dev/null ;set +x;}
-vv() { pactl set-sink-volume $([[ -n $2 ]] && echo $2 || echo 0) "$1"% ;}
-vvv() { amixer get Master | egrep -o "[0-9]+%" | uniq ;}
 
 
 # Static
@@ -154,8 +125,5 @@ alias vw='VBoxManage controlvm windows'
 
 
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias ls='colorls'
-
-
-#git remote add origin git@github.com:gabriel-del/ecommerce-example.git
+alias ls='colorls --sd'
 
