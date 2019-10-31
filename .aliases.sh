@@ -98,18 +98,12 @@ alias dddd='sdcv -c'
 alias d="pacman -S --noconfirm"
 alias ds="pacman -Ss"
 
-
-
-
 alias gs='git status'
 
 #Tmux
 alias ts='tmux attach-session -t'
 alias tn='tmux new -s'
 alias tl='tmux ls'
-
-
-
 
 # Static
 alias h='hugo server -D'
@@ -124,6 +118,7 @@ alias vc='VBoxManage controlvm'
 alias vw='VBoxManage controlvm windows'
 
 
+alias out="sudo pkill -u $USER"
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias ls='colorls --sd'
 
