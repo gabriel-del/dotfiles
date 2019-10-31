@@ -17,6 +17,7 @@ fi
 
 #navegação
 
+alias gs='git status'
 Ld() { tre -pL 1 $* | grep '^\[[d|l]' | cut -d' ' -f 3- | sed "s/ -> .*//g" ;}
 La() { tre -pL 1 $* | grep '^\[[-|l]' | cut -d' ' -f 3- | sed "s/ -> .*//g" ;}
 F() { ls | grep "$*" | sed -n 1p ;}

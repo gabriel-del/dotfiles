@@ -98,7 +98,6 @@ alias dddd='sdcv -c'
 alias d="pacman -S --noconfirm"
 alias ds="pacman -Ss"
 
-alias gs='git status'
 
 #Tmux
 alias ts='tmux attach-session -t'
