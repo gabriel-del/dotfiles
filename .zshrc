@@ -2,11 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-
-if [ -f ~/.aliases.sh ]; then
-    source ~/.aliases.sh
-fi
+export ZSH="/root/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -72,11 +68,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  # git
-  zsh-syntax-highlighting
-  zsh-autosuggestions
-  )
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -105,15 +97,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-
-ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
-if [[ ! -d $ZSH_CACHE_DIR ]]; then
-  mkdir $ZSH_CACHE_DIR
-fi
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
-PROMPT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%} '
-
-

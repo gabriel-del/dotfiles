@@ -33,7 +33,7 @@ tres() { for i in $(tre); do [[ -f "$i" ]] && [[ -n "$(cat "$i" | grep "$*")" ]]
 ext() { cont="$(echo "${!1}" | sed "s/\./\n/g" | wc -l)" ; [[ "$cont" -gt 1 ]] && let cont--;
     export "$1"="$(echo "${!1}" |cut -d. -f-"$cont")" ;}
 pen() { sudo pv "$(pwd)/$1" | sudo dd of=/dev/sdb ;}
-out() { sudo pkill -u $USER ;}
+# out() { sudo pkill -u $USER ;}
 
 #git
 gg() { git add . ; git commit -m "$([[ $# -eq 0 ]] && echo $(date +%F=%T) || echo $@)" ; git push;}
