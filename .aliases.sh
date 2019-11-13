@@ -43,8 +43,8 @@ export ANDROID_HOME=/opt/android-sdk
 export EDITOR="/usr/bin/vim"
 export TERMINAL=st
 export BROWSER=google-chrome-stable
-export LANG=pt_BR.UTF-8
-export LC_ALL=pt_BR.UTF-8
+# export LANG=pt_BR.UTF-8
+# export LC_ALL=pt_BR.UTF-8
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 #export manvim="/usr/share/vim/$(ls /usr/share/vim | grep [1-9])/doc"
 export manmutt="/usr/share/doc/mutt"
@@ -63,8 +63,9 @@ alias cp='cp -vr'
 alias bd=". bd -si"
 alias rm='rm -rv'
 # alias ranger='ranger --choosedir=$HOME/.rangerdir;cd "$(cat $HOME/.rangerdir)"'
-alias yay="sudo -u duser yay"
-alias trizen="sudo -u visita trizen"
+alias sudo="sudo -u sudo"
+alias yay="sudo yay"
+alias trizen="sudo trizen"
 
 #preguiças
 alias r="ranger"
