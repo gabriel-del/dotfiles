@@ -23,4 +23,3 @@ function gs
 	$COMMAND status 
 end
 
-fish_ssh_agent
