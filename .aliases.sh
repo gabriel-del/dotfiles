@@ -1,3 +1,6 @@
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx
+[[ -n $DISPLAY && $XDG_VTNR -eq 1 && $TERM =~ xterm ]] && tmux
+
 export path2="
 /bin
 $HOME/.gem/ruby/2.4.0/bin
@@ -43,8 +46,6 @@ export ANDROID_HOME=/opt/android-sdk
 export EDITOR="/usr/bin/vim"
 export TERMINAL=st
 export BROWSER=google-chrome-stable
-# export LANG=pt_BR.UTF-8
-# export LC_ALL=pt_BR.UTF-8
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 #export manvim="/usr/share/vim/$(ls /usr/share/vim | grep [1-9])/doc"
 export manmutt="/usr/share/doc/mutt"
@@ -113,8 +114,6 @@ alias h='hugo server -D'
 alias hf="hugo server -D  --port 1314 --source $DIR_hff"
 alias he="hugo server -D --port 1315 --source $DIR_hee"
 
-alias fs="$HOME/.Freenet/run.sh stop"
-
 #VirtualBox
 alias vb='VBoxManage'
 alias vc='VBoxManage controlvm'
@@ -124,4 +123,3 @@ alias vw='VBoxManage controlvm windows'
 alias out="sudo pkill -u $USER"
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias ls='colorls --sd'
-

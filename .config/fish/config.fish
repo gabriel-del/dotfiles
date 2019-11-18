@@ -22,3 +22,5 @@ function gs
 	[ "$PWD" = "$HOME" ] ; and  set COMMAND config ; or set COMMAND git
 	$COMMAND status 
 end
+
+fish_ssh_agent
