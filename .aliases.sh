@@ -1,5 +1,5 @@
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx
-[[ -n $DISPLAY && $XDG_VTNR -eq 1 && $TERM =~ xterm ]] && tmux
+[[ -n $DISPLAY && $XDG_VTNR -eq 1 && $TERM =~ (xterm|st) ]] && tmux
 
 export path2="
 /bin
