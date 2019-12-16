@@ -14,6 +14,7 @@ end
 
 function gg
 	[ "$PWD" = "$HOME" ] ; and  set COMMAND config ; or set COMMAND git
+	$COMMAND add .
 	$COMMAND commit -a -m ([ -n "$argv[1]" ] ; and echo "$argv" ;or date +%F=%T)
 	$COMMAND push 
 end
