@@ -8,7 +8,7 @@ function v
 end
 
 function c
-	cd (colorls -1d | cut -d' ' -f7 | grep "$argv[1]" | sed -n ([ -n "$argv[2]" ] ;and echo "$argv[2]" ;or echo 1)p)
+	cd (colorls -1d | cut -d' ' -f7- | grep "$argv[1]" | sed -n ([ -n "$argv[2]" ] ;and echo "$argv[2]" ;or echo 1)p)
 	ls
 end
 
