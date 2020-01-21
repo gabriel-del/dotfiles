@@ -5,4 +5,5 @@ exec cinnamon-session
 # exec awesome
 # exec xmonad
 
+# exec spectrwm
 
