@@ -1,41 +1,14 @@
 filetype off
 syntax on
 filetype plugin indent on     " required!
+set rtp+=~/.vim/bundle/Vundle.vim
 
-set showmatch "mostra pares de colchetes
-set mouse=a "habilita todas as acoes do mouse
-set ruler                         " mostra a linha e coluna na statusbar
-set background=dark "clarear letra
-set number "exibe números nas linhas
-set wildmenu
-set hlsearch
-set incsearch
-set showcmd
-set autowrite
-set clipboard=unnamedplus
-set guioptions=aAimrLT
-set nobackup
-set smartindent "indentação de acordo com linguagem
-set tabstop=1
-set shiftwidth=1
-set smarttab
-set expandtab
-set softtabstop=1
-set autoindent
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'thaerkh/vim-indentguides'
+call vundle#end() 
 
-autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
-
-
-
-au BufNewFile,BufRead *.py
-    \ set expandtab       |" replace tabs with spaces
-    \ set autoindent      |" copy indent when starting a new line
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
-
-call plug#begin('~/.vim/plugged')
+call plug#begin(expand('~/.vim/plugged'))
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'vim-scripts/vim-auto-save'
 Plug 'tomtom/tcomment_vim'
@@ -45,37 +18,48 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'dag/vim-fish'
 Plug 'dart-lang/dart-vim-plugin'
-" Plug 'vim-scripts/indentpython.vim'
-" Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-" Plug 'Vimjas/vim-python-pep8-indent'
-
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 "Plugins
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-let g:auto_save = 1 
-let g:auto_save_silent = 1
-
-"Opções
-function! Refresh()                                                                                                                                               
+function! Refresh()
     set noconfirm
     bufdo e!
     set confirm
 endfunction
 nmap <F5> :call Refresh()<CR>
 
-"indentação por tipo
-if has ("autocmd")
-filetype plugin indent on
-endif
+let g:auto_save = 1 
+let g:auto_save_silent = 1
 
-" let g:airline#extensions#tabline#enabled = 2
-let g:airline_theme='jellybeans'
-
-"Meus teste
-
-
-
+map <silent> <F2> <ESC> :silent !chmod 755 %<CR> :!"%:p"<CR> :redraw!<CR>
+set background=dark "clarear letra
+colorscheme peachpuff
+" set nolist "So pega se for essa linha de baixo descomentada (nao faz sentido)
+" set cursorcolumn
+set cursorline
+set listchars=space:\ ,tab:>~ list
+set showmatch "mostra pares de colchetes
+set ruler " mostra a linha e coluna na statusbar
+set number "exibe números nas linhas
+set mouse=a "habilita todas as acoes do mouse
+set guioptions=aAimrLT
+set clipboard=unnamedplus
+set encoding=utf-8
+set nobackup
+set wildmenu
+set hlsearch
+set incsearch
+set autowrite
+set smartindent "indentação de acordo com linguagem
+set expandtab
+set smarttab
+set autoindent
+set tabstop=2 shiftwidth=2 expandtab softtabstop=2
+set conceallevel=0
+let g:tex_conceal = ''
 
