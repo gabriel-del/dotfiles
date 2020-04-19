@@ -1,0 +1,19 @@
+[Desktop Entry]
+FullScreen=true
+shouldShowMenuBarComingFromFullScreen=true
+shouldShowToolBarComingFromFullScreen=true
+
+[MainWindow]
+Height 768=768
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAABVYAAAMAAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1366=1366
+
+[Recent Files]
+File1[$e]=$HOME/Downloads/Plano de Ensino - Turma(E7) - 2020.pdf
+File2[$e]=$HOME/Downloads/Plano de Ensino - Turma(EB) - 2020.pdf
+File3[$e]=$HOME/CDL handbook, espanol.pdf
+Name1[$e]=Plano de Ensino - Turma(E7) - 2020.pdf
+Name2[$e]=Plano de Ensino - Turma(EB) - 2020.pdf
+Name3[$e]=CDL handbook, espanol.pdf
