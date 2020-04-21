@@ -1,0 +1,150 @@
+#!/bin/bash
+#[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx
+#[[ -n $DISPLAY && $XDG_VTNR -eq 1 && $TERM =~ (xterm|st) ]] && tmux
+
+export path="
+/bin
+/sbin
+/usr/bin
+/usr/sbin
+/usr/local/bin
+/usr/local/sbin
+/usr/bin/site_perl
+/usr/bin/vendor_perl
+/usr/bin/core_perl
+/usr/games
+/usr/games/bin
+/usr/lib64/kde4/libexec
+/usr/lib64/qt/bin
+/usr/lib64/ruby/gems/2.1.0
+/usr/lib64/ruby/gems/2.1.0/gems/jekyll-3.7.3/exe
+/usr/lib64/ruby/gems/2.1.0/gems/bundler-1.16.1/exe
+/usr/lib64/python2.7/site-packages
+/usr/lib64
+/usr/share/texmf/bin
+/src/sbin
+/opt/bin
+/opt/andoid-sdk/tools
+/opt/andoid-sdk/platform-tools
+/opt/andoird-sdk/tools
+/opt/andoird-sdk/platform-tools
+/opt/blender
+/home/linuxbrew/.linuxbrew/bin
+$HOME/.gem/ruby/2.4.0/bin
+$HOME/.gem/ruby/2.6.0/bin
+$HOME/.bin
+$HOME/.scripts
+$HOME/.go/bin
+$HOME/.gem/ruby/2.1.0
+$HOME/.yarn/bin
+$HOME/.config/yarn/global/node_modules/.bin
+"
+
+# colors
+darkgrey="$(tput bold ; tput setaf 0)"
+white="$(tput bold ; tput setaf 7)"
+blue="$(tput bold; tput setaf 4)"
+cyan="$(tput bold; tput setaf 6)"
+nc="$(tput sgr0)"
+export PS1="\[$blue\][ \[$cyan\]\H \[$darkgrey\]\w\[$darkgrey\] \[$blue\]]\\[$darkgrey\]# \[$nc\]"
+export LD_PRELOAD=""
+
+
+export GOPATH="$HOME/.go"
+export WEKA_HOME="$HOME/.wekafiles"
+export ANDROID_HOME=/opt/android-sdk
+
+#Manuais
+export EDITOR="vim"
+export TERMINAL=urxvt
+export BROWSER=firefox
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+#export manvim="/usr/share/vim/$(ls /usr/share/vim | grep [1-9])/doc"
+export manmutt="/usr/share/doc/mutt"
+export archwiki="/usr/share/doc/arch-wiki/"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
+#Renames
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias df='df -h'
+alias cp='cp -vr'
+alias bd=". bd -si"
+alias rm='rm -rv'
+#alias ranger='ranger --choosedir=$HOME/.rangerdir;cd "$(cat $HOME/.rangerdir)"'
+alias sudo="sudo -u sudo"
+alias yay="sudo yay"
+alias trizen="sudo trizen"
+alias shred="shred -zf"
+alias wget="wget -U 'noleak'"
+alias curl="curl --user-agent 'noleak'"
+
+
+#preguiças
+alias r="ranger"
+alias sn="sncli"
+alias q='exit'
+alias x='startx'
+alias kl='killall'
+alias ..='cd .. && ls'
+alias ...='cd ../.. && ls'
+alias ....='cd ../../.. && ls'
+
+#atalhos
+alias mountp="mount -o uid=$(id -u $USER),gid=$(id -g $USER)"
+alias bs='source ~/.bashrc && source ~/.bash_profile'
+alias bb='vim ~/.bashrc'
+alias bp='vim ~/.bash_profile'
+alias ss='systemctl suspend -i'
+# alias ss="sudo pm-suspend"
+# alias cdr='cd - &> /dev/null'
+#alias ss='set +x && set +x'
+alias tempo="curl http://wttr.in/$(basename "$(ls -l | grep localtime | cut -d'>' -f2-)")"
+alias pop='Popcorn-Time'
+alias vi='vim +PluginInstall +qall'
+alias dddd='sdcv -c'
+
+#Install
+# alias dprograms='/root/PublicShare/Dprograms/Dprograms.sh'
+# alias d='dprograms -i'
+# alias D='dprograms -I'
+# alias ds='dprograms -s'
+# alias Du='dprograms -u'
+# alias dr='dprograms -r'
+# alias DD='dsync -cus'
+alias d="pacman -S --noconfirm"
+alias ds="pacman -Ss"
+
+
+#Tmux
+alias ts='tmux attach-session -t'
+alias tn='tmux new -s'
+alias tl='tmux ls'
+
+# Static
+alias h='hugo server -D'
+alias hf="hugo server -D  --port 1314 --source $DIR_hff"
+alias he="hugo server -D --port 1315 --source $DIR_hee"
+
+#VirtualBox
+alias vb='VBoxManage'
+alias vc='VBoxManage controlvm'
+alias vw='VBoxManage controlvm windows'
+
+
+alias out="sudo pkill -u $USER"
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+#alias ls='colorls --sd'
+
+alias listfiles="find . -maxdepth 1 -type f -not -path '*/\.*' | sort"
+alias listdirs="find . -mindepth 1 -maxdepth 1 -type d -not -path '*/\.*' | sort"
+alias out="pkill -u $USER"
+alias gs='git status'
+alias c="$@ source c && ls"
