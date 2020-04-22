@@ -58,3 +58,8 @@ Xcursor.size:                 14
 
 ! xft
 xft.antialias:                true
+
+URxvt.keysym.Home: \033[1~
+URxvt.keysym.End: \033[4~
+urxvt.keysym.Home: \033[1~
+urxvt.keysym.End: \033[4~
