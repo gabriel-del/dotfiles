@@ -69,7 +69,7 @@ export NVM_DIR="$HOME/.nvm"
 #eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 #Renames
-alias ls='ls --color=auto'
+alias ls='ls --color=always -C --group-directories-first'
 alias dir='dir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -147,4 +147,4 @@ alias listfiles="find . -maxdepth 1 -type f -not -path '*/\.*' | sort"
 alias listdirs="find . -mindepth 1 -maxdepth 1 -type d -not -path '*/\.*' | sort"
 alias out="pkill -u $USER"
 alias gs='git status'
-alias c="$@ source c && ls"
+alias c="$@ source c"

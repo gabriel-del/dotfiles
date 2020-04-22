@@ -7,7 +7,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree.git'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'xavierd/clang_complete'
 Plugin 'thaerkh/vim-indentguides' "botei depois
@@ -23,7 +22,7 @@ syntax on
 " whitespaces
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 highlight ExtraWhitespace ctermbg=cyan guibg=cyan
-autocmd InsertLeave * redraw!
+" autocmd InsertLeave * redraw!
 match ExtraWhitespace /\s\+$\| \+\ze\t/
 autocmd BufWritePre * :%s/\s\+$//e
 
@@ -89,8 +88,8 @@ set wildmode=list:longest,full
 set nowrap
 set statusline=%{getcwd()}\/\%f%=%-14.(%l,%c%V%)\ %P
 set autoread
-set conceallevel=2
-" set conceallevel=0
+" set conceallevel=2
+set conceallevel=0
 set concealcursor=vin
 
 
@@ -99,7 +98,8 @@ colorscheme peachpuff
 " set nolist "So pega se for essa linha de baixo descomentada (nao faz sentido)
 " set cursorcolumn
 set cursorline
-set listchars=space:\ ,tab:>~ list
+" set listchars=space:\ ,tab:>~ list
+set listchars=""
 set mouse=a "habilita todas as acoes do mouse
 set guioptions=aAimrLT
 set encoding=utf-8
@@ -116,23 +116,23 @@ set directory=~/.vim/tmp/swap//
 
 " make directories automatically if they don't already exist
 if !isdirectory(expand(&undodir))
-    call mkdir(expand(&undodir), "p")
+  call mkdir(expand(&undodir), "p")
 endif
 if !isdirectory(expand(&backupdir))
-    call mkdir(expand(&backupdir), "p")
+  call mkdir(expand(&backupdir), "p")
 endif
 if !isdirectory(expand(&directory))
-    call mkdir(expand(&directory), "p")
+  call mkdir(expand(&directory), "p")
 endif
 
 " close brackets
-:inoremap ( ()<Esc>i
-:inoremap < <><Esc>i
-:inoremap { {}<Esc>i
-:inoremap [ []<Esc>i
-:inoremap " ""<Esc>i
-:inoremap ' ''<Esc>i
-:inoremap ` ``<Esc>i
+" :inoremap ( ()<Esc>i
+" :inoremap < <><Esc>i
+" :inoremap { {}<Esc>i
+" :inoremap [ []<Esc>i
+" :inoremap " ""<Esc>i
+" :inoremap ' ''<Esc>i
+" :inoremap ` ``<Esc>i
 
 " cursorline
 au WinLeave * set nocursorline
@@ -171,14 +171,15 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 function! Refresh()
-    set noconfirm
-    bufdo e!
-    set confirm
+  set noconfirm
+  bufdo e!
+  set confirm
 endfunction
 nmap <F5> :call Refresh()<CR>
 
 let g:auto_save = 1
-let g:auto_save_silent = 1
+let g:auto_save_silent = 1  " do not display the auto-save notification
+let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 
 map <silent> <F2> <ESC> :silent !chmod 755 %<CR> :!"%:p"<CR> :redraw!<CR>
 
