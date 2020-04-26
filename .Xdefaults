@@ -3,7 +3,22 @@
 *background:                  #000000
 
 ! urxvt
-urxvt.font:                   xft:xos4 Terminus:size=12:antialias=true:hinting=true
+! urxvt.font:                   xft:xos4 Terminus:size=12:antialias=true:hinting=true
+URxvt.font: xft:FuraCode Nerd Font Mono:style=Retina,Regular
+! *.font: xft:FuraCode Nerd Font Mono:style=Retina,Regular
+! *.font: monospace:size=10
+! URxvt.font: xft:monaco:size=10
+! URxvt.font: xft:PowerlineSymbols:size=13
+! ,DejaVu Sans Mono:size=11
+! URxvt*font:           xft:DejaVu Sans Mono:style=Book:pixelsize=12
+! Urxvt.font:  xft:Dejavu Sans Mono:pixelsize=35
+! urxvt.font:                   xft:xos4 Terminus:size=12:antialias=true:hinting=true
+! URxvt*font: xft:Inconsolata Nerd Font Mono:size=15, xft:DejaVu Sans:size=12
+!Urxvt.font:  xft:Dejavu Sans Mono:pixelsize=15
+! URxvt.font:            xft:Hack:pixelsize=18,\
+!                        xft:DejaVu Sans Mono:pixelsize:18,\
+!                        xft:Unifont:pixelsize:16,\
+!                        -*-unifont-*-*-*-*-*-*-*-*-*-*-*-*
 urxvt.url-launcher:           /usr/bin/xdg-open
 urxvt.matcher.button:         1
 urxvt.matcher.pattern.0:      \\b([a-zA-Z]+:\/\/\\w[\\w-.@:]*|www\\.\\w[\\w-]*\\.\\w[\\w-.]*)(\/[^"' ()]*)?
@@ -58,8 +73,9 @@ Xcursor.size:                 14
 
 ! xft
 xft.antialias:                true
-
 URxvt.keysym.Home: \033[1~
 URxvt.keysym.End: \033[4~
 urxvt.keysym.Home: \033[1~
 urxvt.keysym.End: \033[4~
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
