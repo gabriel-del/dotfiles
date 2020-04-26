@@ -1,7 +1,14 @@
 #!/bin/bash
+shopt -s expand_aliases
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-[[ "$PWD" == "$HOME" ]] && COMMAND=config || COMMAND=git
-[[ "$COMMAND" == "$git" ]] && $COMMAND add .
-
-$COMMAND commit -m "$([[ $# -eq 0 ]] && echo $(date +%F=%T) || echo $@)"
-$COMMAND push
+if [[ "$PWD" == "$HOME" ]] ;then
+  # -n to dry-run
+  config add -vu .
+  config commit -m "$([[ -z $@ ]] && echo $(date +%F=%T) || echo $@)"
+  config push
+else
+  git add -v .
+  git commit -m "$([[ -z $@ ]] && echo $(date +%F=%T) || echo $@)"
+  git push
+fi

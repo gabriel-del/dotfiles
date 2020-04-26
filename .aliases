@@ -1,5 +1,5 @@
 #!/bin/bash
-#[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx
 #[[ -n $DISPLAY && $XDG_VTNR -eq 1 && $TERM =~ (xterm|st) ]] && tmux
 
 export path="
@@ -22,6 +22,7 @@ export path="
 /usr/lib64/python2.7/site-packages
 /usr/lib64
 /usr/share/texmf/bin
+/usr/share/spectrwm/
 /src/sbin
 /opt/bin
 /opt/andoid-sdk/tools
@@ -70,6 +71,7 @@ export NVM_DIR="$HOME/.nvm"
 
 #Renames
 alias ls='ls --color=always -C --group-directories-first'
+alias ls='colorls --sd'
 alias dir='dir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -121,9 +123,13 @@ alias dddd='sdcv -c'
 # alias DD='dsync -cus'
 alias d="pacman -S --noconfirm"
 alias ds="pacman -Ss"
+alias y="yay -S --noconfirm"
+alias ys="yay -Ss"
 
 
 #Tmux
+alias t="tmux"
+alias T="tmuxnator"
 alias ts='tmux attach-session -t'
 alias tn='tmux new -s'
 alias tl='tmux ls'

@@ -3,6 +3,10 @@
         "standard://home": {
             "sortOrder": 0,
             "sortRole": 265
+        },
+        "standard://home/.cache": {
+            "iconSizeLevel": 1,
+            "viewMode": 1
         }
     },
     "WindowManager": {
@@ -10,8 +14,8 @@
             "sidebar": 200
         },
         "WindowState": {
-            "height": 748,
-            "width": 1360
+            "height": 646,
+            "width": 1244
         }
     }
 }
