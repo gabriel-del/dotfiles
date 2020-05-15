@@ -90,7 +90,6 @@ alias ipinfo="curl ipinfo.io/ip"
 
 
 #preguiças
-alias E="$EDITOR"
 alias sn="sncli"
 alias q='exit'
 alias x='startx'
