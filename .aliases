@@ -56,8 +56,8 @@ export WEKA_HOME="$HOME/.wekafiles"
 export ANDROID_HOME=/opt/android-sdk
 
 #Manuais
-export EDITOR="vim"
-export TERMINAL=urxvt
+export EDITOR="kak"
+export TERMINAL=kitty
 export BROWSER=firefox
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 #export manvim="/usr/share/vim/$(ls /usr/share/vim | grep [1-9])/doc"
@@ -80,17 +80,17 @@ alias df='df -h'
 alias cp='cp -vr'
 alias bd=". bd -si"
 alias rm='rm -rv'
-#alias ranger='ranger --choosedir=$HOME/.rangerdir;cd "$(cat $HOME/.rangerdir)"'
 alias sudo="sudo -u sudo"
 alias yay="sudo yay"
 alias trizen="sudo trizen"
 alias shred="shred -zf"
 alias wget="wget -U 'noleak'"
 alias curl="curl --user-agent 'noleak'"
+alias ipinfo="curl ipinfo.io/ip"
 
 
 #preguiças
-alias r="ranger"
+alias E="$EDITOR"
 alias sn="sncli"
 alias q='exit'
 alias x='startx'
@@ -121,15 +121,15 @@ alias dddd='sdcv -c'
 # alias Du='dprograms -u'
 # alias dr='dprograms -r'
 # alias DD='dsync -cus'
-alias d="pacman -S --noconfirm"
-alias ds="pacman -Ss"
-alias y="yay -S --noconfirm"
-alias ys="yay -Ss"
+alias i="pacman -S --noconfirm"
+alias is="pacman -Ss"
+alias I="yay -S --noconfirm"
+alias Is="yay -Ss"
 
 
 #Tmux
 alias t="tmux"
-alias T="tmuxnator"
+alias T="tmuxp load"
 alias ts='tmux attach-session -t'
 alias tn='tmux new -s'
 alias tl='tmux ls'
@@ -154,3 +154,5 @@ alias listdirs="find . -mindepth 1 -maxdepth 1 -type d -not -path '*/\.*' | sort
 alias out="pkill -u $USER"
 alias gs='git status'
 alias c="$@ source c"
+#alias d="$@ source d"
+#alias ranger='ranger --choosedir=$HOME/.rangerdir;cd "$(cat $HOME/.rangerdir)"'

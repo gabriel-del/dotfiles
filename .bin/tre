@@ -1,9 +1,9 @@
 #!/bin/bash
 
-#tre() { tree -fi $* | sed -n "2,+$(tree -fi $* | sed '1,4'd | wc -l)"p ;} 
+#tre() { tree -fi $* | sed -n "2,+$(tree -fi $* | sed '1,4'd | wc -l)"p ;}
 #tres() { for i in $(tre); do [[ -f "$i" ]] && [[ -n "$(cat "$i" | grep "$*")" ]] && echo "$i" ;done ;}
 
 
- for i in $(tree -fi $* | sed -n "2,+$(tree -fi $* | sed '1,4'd | wc -l)"p)
- do [[ -f "$i" ]] && [[ -n "$(cat "$i" | grep "$*")" ]] && echo "$i" 
- done 
+ for i in $(tree -fi | sed -n "2,+$(tree -fi | sed '1,4'd | wc -l)"p)
+ do [[ -f "$i" ]] && [[ -n "$(cat "$i" | grep "$*")" ]] && echo "$i"
+ done
