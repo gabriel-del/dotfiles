@@ -1,0 +1,10 @@
+#!/bin/bash
+shopt -s expand_aliases
+alias listfiles="find . -maxdepth 1 -type f -not -path '*/\.*' | sort"
+
+echo "$1" | grep \/ &> /dev/null
+if [[ $? -eq 0 ]] || [[  $1 =~ ^\. ]] ;then
+	[[ $# -eq 1 ]] && $EDITOR $1
+else
+	$EDITOR "$(listfiles | grep "$1" | sed -n "$([[ -n $2 ]] && echo $2 || echo 1 )"p ;)"
+fi
