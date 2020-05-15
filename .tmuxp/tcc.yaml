@@ -1,0 +1,20 @@
+session_name: Tcc
+start_directory: ~/Documents/education/2020/tcc/1meu/
+windows:
+- window_name: main
+  panes:
+    - shell_command:
+        - $EDITOR main.tex
+- window_name: Make
+  shell_command_before:
+    - okular tmp/main.pdf &
+- window_name: Documents
+  panes:
+    - shell_command:           
+        - cd documents         
+        - ls 
+- window_name: Etc
+  panes:
+    - shell_command:           
+        - cd etc          
+        - ls 
