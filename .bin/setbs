@@ -1,0 +1,39 @@
+#!/bin/bash
+shopt -s expand_aliases
+sound_control=amixer
+brightness_control=light
+sound_step=4
+brightness_step=2
+
+# Sound Control
+case "$sound_control" in
+  amixer)
+    alias sound_get="amixer get Master"
+    alias sound_mute="amixer -q sset Master toggle"
+    alias sound_increase="amixer -q sset Master $sound_step%+"
+    alias sound_decrease="amixer -q sset Master $sound_step%-"
+    alias sound_set="amixer set Master $3%"
+    ;;
+  pactl)
+    alias sound_mute=" pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    alias sound_increase="pactl set-sink-volume @DEFAULT_SINK@ +$sound_step%"
+    alias sound_decrease=" pactl set-sink-volume @DEFAULT_SINK@ -$sound_step%"
+esac
+
+# Brightness Control
+case "$brightness_control" in
+  xbacklight)
+    alias brightness_get="xbacklight -get"
+    alias brightness_increase="xbacklight -inc $brightness_step"
+    alias brightness_decrease="xbacklight -dec $brightness_step"
+    alias brightness_set="xbacklight -set $3"
+    ;;
+  light)
+    alias brightness_get="light"
+    alias brightness_increase="light  -A $brightness_step"
+    alias brightness_decrease="light -U $brightness_step"
+    alias brightness_set="light -S $3"
+esac
+
+eval $1_$2
+
