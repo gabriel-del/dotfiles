@@ -58,7 +58,7 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set cinoptions=(0,m1,:1
-set tw=80
+" set tw=80
 set formatoptions=tcqro2
 set smartindent "indentação de acordo com linguagem
 set laststatus=2
@@ -85,7 +85,8 @@ set noswapfile
 set foldlevelstart=0
 set wildmenu
 set wildmode=list:longest,full
-set nowrap
+set wrap
+" set nowrap
 set statusline=%{getcwd()}\/\%f%=%-14.(%l,%c%V%)\ %P
 set autoread
 " set conceallevel=2

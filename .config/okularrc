@@ -1,19 +1,24 @@
 [Desktop Entry]
-FullScreen=true
+FullScreen=false
 shouldShowMenuBarComingFromFullScreen=true
 shouldShowToolBarComingFromFullScreen=true
 
 [MainWindow]
-Height 768=768
-MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAAAABVYAAAMAAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+Height 768=766
+State=AAAA/wAAAAD9AAAAAAAAArIAAALqAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
-Width 1366=1366
+Width 1366=690
 
 [Recent Files]
-File1[$e]=$HOME/Downloads/Plano de Ensino - Turma(E7) - 2020.pdf
-File2[$e]=$HOME/Downloads/Plano de Ensino - Turma(EB) - 2020.pdf
-File3[$e]=$HOME/Downloads/dontpanic-master-19d1e03a0b1cd07c1f60ef72742789b38574a4ba/dontpanic
-Name1[$e]=Plano de Ensino - Turma(E7) - 2020.pdf
-Name2[$e]=Plano de Ensino - Turma(EB) - 2020.pdf
-Name3[$e]=dontpanic
+File1[$e]=$HOME/Documents/education/2020/tcc/1meu-bk2/tmp/main.pdf
+File2[$e]=$HOME/Documents/education/2020/tcc/1meu-bk3/tmp/main.pdf
+File3[$e]=$HOME/Downloads/TESE Washington Wagner Azevedo da Silva.pdf
+File4[$e]=$HOME/Documents/education/2020/tcc/1meu/tmp/main.pdf
+File5[$e]=$HOME/Documents/education/2020/estagio/1meu/tmp/main.pdf
+File6[$e]=$HOME/Documents/education/2020/tcc/1meu/tmp/main.pdf
+Name1[$e]=main.pdf
+Name2[$e]=main.pdf
+Name3[$e]=TESE Washington Wagner Azevedo da Silva.pdf
+Name4[$e]=main.pdf
+Name5[$e]=main.pdf
+Name6[$e]=main.pdf

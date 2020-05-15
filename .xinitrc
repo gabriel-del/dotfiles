@@ -77,6 +77,9 @@ else
 # session=${1:-spectrwm}
 	SESSION=spectrwm
 fi
+# Para iniciar com outro é:
+# xinit sessão
+# startx ~/.xinitrc sessão
 
 exec $SESSION > /tmp/session.log 2>&1
 
