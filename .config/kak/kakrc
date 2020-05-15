@@ -182,3 +182,7 @@ hook global InsertChar '[jk]' %{  try %{
 # set-option current expandtab
 map global normal D '<a-l>d' -docstring 'delete to end of line'
 map global normal Y '<a-l>y' -docstring 'yank to end of line'
+
+set global tabstop 2
+set global indentwidth 2
+set global expandtab
