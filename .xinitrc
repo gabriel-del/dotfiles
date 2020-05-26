@@ -76,6 +76,8 @@ else
 # default session
 # session=${1:-spectrwm}
 	SESSION=spectrwm
+	SESSION=cinnamon-session
+	# SESSION=i3
 fi
 # Para iniciar com outro é:
 # xinit sessão
