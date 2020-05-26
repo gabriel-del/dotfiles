@@ -155,3 +155,6 @@ alias gs='git status'
 alias c="$@ source c"
 #alias d="$@ source d"
 #alias ranger='ranger --choosedir=$HOME/.rangerdir;cd "$(cat $HOME/.rangerdir)"'
+alias cinnamonbackup="dconf dump /org/cinnamon/ > $HOME/.cinnamon.config"
+alias cinnamonrestore="dconf load /org/cinnamon/ < $HOME/.cinnamon.config"
+

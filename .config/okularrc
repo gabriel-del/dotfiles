@@ -5,22 +5,24 @@ shouldShowToolBarComingFromFullScreen=true
 
 [MainWindow]
 Height 768=766
-State=AAAA/wAAAAD9AAAAAAAAArIAAALqAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAAAABVQAAALqAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
-Width 1366=690
+Width 1366=1364
 
 [Recent Files]
 File1[$e]=$HOME/Documents/education/2020/tcc/1meu-bk2/tmp/main.pdf
 File2[$e]=$HOME/Documents/education/2020/tcc/1meu-bk3/tmp/main.pdf
-File3[$e]=$HOME/Documents/education/2020/estagio/1meu/tmp/main.pdf
-File4[$e]=$HOME/Downloads/TESE Washington Wagner Azevedo da Silva.pdf
-File5[$e]=$HOME/Documents/education/2020/tcc/1meu/tmp/main.pdf
-File6[$e]=$HOME/Downloads/ABNT NBR 6023 2018 (1).pdf
-File7[$e]=$HOME/Downloads/abntex2cite-alf.pdf
+File3[$e]=$HOME/Downloads/TESE Washington Wagner Azevedo da Silva.pdf
+File4[$e]=$HOME/Documents/education/2020/tcc/1meu/tmp/main.pdf
+File5[$e]=$HOME/Downloads/ABNT NBR 6023 2018 (1).pdf
+File6[$e]=$HOME/Downloads/abntex2cite-alf.pdf
+File7[$e]=$HOME/Documents/education/2020/estagio/1meu/tmp/main.pdf
+File8[$e]=$HOME/Downloads/InformeRendimento.pdf
 Name1[$e]=main.pdf
 Name2[$e]=main.pdf
-Name3[$e]=main.pdf
-Name4[$e]=TESE Washington Wagner Azevedo da Silva.pdf
-Name5[$e]=main.pdf
-Name6[$e]=ABNT NBR 6023 2018 (1).pdf
-Name7[$e]=abntex2cite-alf.pdf
+Name3[$e]=TESE Washington Wagner Azevedo da Silva.pdf
+Name4[$e]=main.pdf
+Name5[$e]=ABNT NBR 6023 2018 (1).pdf
+Name6[$e]=abntex2cite-alf.pdf
+Name7[$e]=main.pdf
+Name8[$e]=InformeRendimento.pdf

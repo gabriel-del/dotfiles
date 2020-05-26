@@ -11,7 +11,7 @@ source "%val{config}/plugins/plug.kak/rc/plug.kak"
 plug "andreyorst/plug.kak" noload
 plug "lePerdu/kakboard" %{
         hook global WinCreate .* %{ kakboard-enable }
-        kakboard-enable 
+        # kakboard-enable 
 }
 plug "alexherbo2/search-highlighting.kak" %{
         hook global WinCreate .* %{ search-highlighter-enable }
@@ -183,6 +183,6 @@ hook global InsertChar '[jk]' %{  try %{
 map global normal D '<a-l>d' -docstring 'delete to end of line'
 map global normal Y '<a-l>y' -docstring 'yank to end of line'
 
-set global tabstop 2
-set global indentwidth 2
-set global expandtab
+# set-option global tabstop 2
+# set-option global indentwidth 2
+# set-option global expandtab
