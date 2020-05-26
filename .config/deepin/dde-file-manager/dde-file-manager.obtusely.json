@@ -1,8 +1,10 @@
 {
     "FileViewState": {
         "standard://home": {
+            "iconSizeLevel": 1,
             "sortOrder": 0,
-            "sortRole": 265
+            "sortRole": 265,
+            "viewMode": 1
         },
         "standard://home/.cache": {
             "iconSizeLevel": 1,

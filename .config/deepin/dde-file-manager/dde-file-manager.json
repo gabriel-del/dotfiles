@@ -1,6 +1,7 @@
 {
     "ApplicationAttribute": {
         "AllwayOpenOnNewWindow": false,
+        "IconSizeLevel": 1,
         "ThemeName": "dark"
     }
 }
