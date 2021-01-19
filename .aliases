@@ -167,3 +167,4 @@ alias c="$@ source c"
 alias cinnamonbackup="dconf dump /org/cinnamon/ > $HOME/.cinnamon.config"
 alias cinnamonrestore="dconf load /org/cinnamon/ < $HOME/.cinnamon.config"
 
+
