@@ -75,7 +75,7 @@ if [ $# -eq 1 -a -n "$1" ]; then
 else
 # default session
 # session=${1:-spectrwm}
-	SESSION=spectrwm
+	# SESSION=spectrwm
 	SESSION=cinnamon-session
 	# SESSION=i3
 fi

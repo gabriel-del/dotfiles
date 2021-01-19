@@ -1,28 +1,37 @@
 [Desktop Entry]
 FullScreen=false
 shouldShowMenuBarComingFromFullScreen=true
-shouldShowToolBarComingFromFullScreen=true
+shouldShowToolBarComingFromFullScreen=false
 
 [MainWindow]
-Height 768=766
-State=AAAA/wAAAAD9AAAAAAAABVQAAALqAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+Height 768=767
+LVDS1 Height 768=767
+LVDS1 Width 1366=1366
+LVDS1 XPosition=0
+LVDS1 YPosition=0
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAABVYAAALaAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAIgBhAG4AbgBvAHQAYQB0AGkAbwBuAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAAAAAAA==
 ToolBarsMovable=Disabled
-Width 1366=1364
+Width 1366=1366
 
 [Recent Files]
-File1[$e]=$HOME/Documents/education/2020/tcc/1meu-bk2/tmp/main.pdf
-File2[$e]=$HOME/Documents/education/2020/tcc/1meu-bk3/tmp/main.pdf
-File3[$e]=$HOME/Downloads/TESE Washington Wagner Azevedo da Silva.pdf
-File4[$e]=$HOME/Documents/education/2020/tcc/1meu/tmp/main.pdf
-File5[$e]=$HOME/Downloads/ABNT NBR 6023 2018 (1).pdf
-File6[$e]=$HOME/Downloads/abntex2cite-alf.pdf
-File7[$e]=$HOME/Documents/education/2020/estagio/1meu/tmp/main.pdf
-File8[$e]=$HOME/Downloads/InformeRendimento.pdf
-Name1[$e]=main.pdf
-Name2[$e]=main.pdf
-Name3[$e]=TESE Washington Wagner Azevedo da Silva.pdf
+File1[$e]=$HOME/Downloads/SinaisSistemas_EE2_2020_3.pdf
+File10[$e]=$HOME/Downloads/outros/document.pdf
+File2[$e]=$HOME/Downloads/SinaisSistemas_EE1_2020_3.pdf
+File3[$e]=$HOME/Downloads/SinaisSistemas_2ndChFinal_2020_3.pdf
+File4[$e]=$HOME/PublicShare/github/latex-emscripten/contratosportovida/tmp/main.pdf
+File5[$e]=$HOME/Downloads/relatorio.pdf
+File6[$e]=$HOME/Downloads/Plano de Ensino - Turma(EB) - 2020.pdf
+File7[$e]=$HOME/Downloads/Grade de horário 2020.1 em 2021_Parcial.pdf
+File8[$e]=$HOME/Downloads/317167073.pdf
+File9[$e]=$HOME/Downloads/outros/ACFrOgDpMkHmxxA4yWD67A8svCFfRJt-KIg7xaMYnTXqqJF6nsScbn0V05djucpwQq5bOhm4L7mTX9jGnhpVdsSUErk0prTIxoICdU7sUZ-CysBWunGliDia0WQ2Ege4bnMffBJXI8vvnQGKqDtr.pdf
+Name1[$e]=SinaisSistemas_EE2_2020_3.pdf
+Name10[$e]=document.pdf
+Name2[$e]=SinaisSistemas_EE1_2020_3.pdf
+Name3[$e]=SinaisSistemas_2ndChFinal_2020_3.pdf
 Name4[$e]=main.pdf
-Name5[$e]=ABNT NBR 6023 2018 (1).pdf
-Name6[$e]=abntex2cite-alf.pdf
-Name7[$e]=main.pdf
-Name8[$e]=InformeRendimento.pdf
+Name5[$e]=relatorio.pdf
+Name6[$e]=Plano de Ensino - Turma(EB) - 2020.pdf
+Name7[$e]=Grade de horário 2020.1 em 2021_Parcial.pdf
+Name8[$e]=317167073.pdf
+Name9[$e]=ACFrOgDpMkHmxxA4yWD67A8svCFfRJt-KIg7xaMYnTXqqJF6nsScbn0V05djucpwQq5bOhm4L7mTX9jGnhpVdsSUErk0prTIxoICdU7sUZ-CysBWunGliDia0WQ2Ege4bnMffBJXI8vvnQGKqDtr.pdf

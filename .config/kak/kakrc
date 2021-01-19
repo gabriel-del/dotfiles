@@ -17,7 +17,10 @@ plug "alexherbo2/search-highlighting.kak" %{
         hook global WinCreate .* %{ search-highlighter-enable }
 }
 
-# colorscheme dracula
+plug "andreyorst/smarttab.kak" defer expandtab %{
+    set-option global softtabstop 2
+} 
+colorscheme torchwood
 
 add-highlighter global/ show-matching
 # add-highlighter global/show-whitespaces show-whitespaces
@@ -183,6 +186,6 @@ hook global InsertChar '[jk]' %{  try %{
 map global normal D '<a-l>d' -docstring 'delete to end of line'
 map global normal Y '<a-l>y' -docstring 'yank to end of line'
 
-# set-option global tabstop 2
-# set-option global indentwidth 2
-# set-option global expandtab
+set-option global tabstop 2
+set-option global indentwidth 2
+addhl global/ wrap

@@ -1,6 +1,8 @@
 #!/bin/bash
+#set +x
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx
 #[[ -n $DISPLAY && $XDG_VTNR -eq 1 && $TERM =~ (xterm|st) ]] && tmux
+# [[ -f $HOME/.sudo ]] && source $HOME/.sudo
 
 export path="
 /bin
@@ -31,6 +33,7 @@ export path="
 /opt/andoird-sdk/platform-tools
 /opt/blender
 /home/linuxbrew/.linuxbrew/bin
+/usr/lib/emscripten
 $HOME/.gem/ruby/2.4.0/bin
 $HOME/.gem/ruby/2.6.0/bin
 $HOME/.bin
@@ -39,7 +42,20 @@ $HOME/.go/bin
 $HOME/.gem/ruby/2.1.0
 $HOME/.yarn/bin
 $HOME/.config/yarn/global/node_modules/.bin
+$HOME/.local/bin
+
 "
+
+# SUDO
+if [[ $(id -u) -eq 0 ]] ;then
+	alias yay='sudo -u sudo yay'
+	alias trizen='sudo -u sudo trizen'
+	alias makepkg='sudo -u sudo makepkg'
+else
+	alias pm-suspend='sudo pm-suspend'
+	alias pkill='sudo pkill'
+	alias fdisk='sudo fdisk'
+fi
 
 # colors
 darkgrey="$(tput bold ; tput setaf 0)"
@@ -80,9 +96,6 @@ alias df='df -h'
 alias cp='cp -vr'
 alias bd=". bd -si"
 alias rm='rm -rv'
-alias sudo="sudo -u sudo"
-alias yay="sudo yay"
-alias trizen="sudo trizen"
 alias shred="shred -zf"
 alias wget="wget -U 'noleak'"
 alias curl="curl --user-agent 'noleak'"
@@ -101,15 +114,11 @@ alias ....='cd ../../.. && ls'
 #atalhos
 alias mountp="mount -o uid=$(id -u $USER),gid=$(id -g $USER)"
 alias bs='source ~/.bashrc && source ~/.bash_profile'
-alias bb='vim ~/.bashrc'
-alias bp='vim ~/.bash_profile'
 alias ss='systemctl suspend -i'
-# alias ss="sudo pm-suspend"
 # alias cdr='cd - &> /dev/null'
 #alias ss='set +x && set +x'
 alias tempo="curl http://wttr.in/$(basename "$(ls -l | grep localtime | cut -d'>' -f2-)")"
 alias pop='Popcorn-Time'
-alias vi='vim +PluginInstall +qall'
 alias dddd='sdcv -c'
 
 #Install
@@ -144,7 +153,7 @@ alias vc='VBoxManage controlvm'
 alias vw='VBoxManage controlvm windows'
 
 
-alias out="sudo pkill -u $USER"
+alias out="pkill -u $USER"
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 #alias ls='colorls --sd'
 

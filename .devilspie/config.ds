@@ -1,2 +1,11 @@
 
-(begin  (undecorate))  
+(begin
+  (undecorate)
+)    
+
+
+(if (is (window_class) "Conky")
+  (begin
+    (set_workspace 10
+  )
+)
