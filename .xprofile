@@ -10,4 +10,6 @@ fi
 # wallpaper
 exec feh --bg-scale /usr/share/blackarch/wallpaper.jpg &
 picom -b
+$HOME/.config/conky/run.sh &
+# devilspie &
 
