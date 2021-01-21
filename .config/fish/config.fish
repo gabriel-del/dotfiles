@@ -1,5 +1,5 @@
 if test -f ~/.aliases
-    bax source ~/.aliases bax
+    replay source ~/.aliases replay
     set -x PATH (echo $path | sed '/^#/d' | tr '\n' ' ' | string split ' ')
 end
 
