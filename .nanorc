@@ -11,7 +11,7 @@ set matchbrackets "(<[{)>]}"
 set positionlog 
 set quickblank
 set smooth
-set const
+#set const
 
 
 

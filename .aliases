@@ -55,6 +55,10 @@ else
 	alias pm-suspend='sudo pm-suspend'
 	alias pkill='sudo pkill'
 	alias fdisk='sudo fdisk'
+	alias pacman='sudo pacman'
+	alias fdisk='sudo fdisk'
+	alias systemctl='sudo systemctl'
+	alias nmcli='sudo nmcli'
 fi
 
 # colors
