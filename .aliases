@@ -155,7 +155,7 @@ alias vw='VBoxManage controlvm windows'
 
 
 alias out="pkill -u $USER"
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 #alias ls='colorls --sd'
 
 alias listfiles="find . -maxdepth 1 -type f -not -path '*/\.*' | sort"
