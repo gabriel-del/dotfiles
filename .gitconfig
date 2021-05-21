@@ -1,3 +1,5 @@
 [user]
 	email = gabrieldelc.barros@gmail.com
 	name = Gabriel Del
+[credential]
+	helper = store
