@@ -8,8 +8,8 @@ then
 fi
 
 # wallpaper
-exec feh --bg-scale /usr/share/blackarch/wallpaper.jpg &
+#exec feh --bg-scale /usr/share/blackarch/wallpaper.jpg &
 picom -b
-$HOME/.config/autostart/conky.sh &
-# devilspie &
-
+$HOME/.config/conky/conky.sh &
+/usr/bin/syncthing --no-browser --logfile=$HOME/.cache/syncthing.log -no-restart -logflags=3 &
+source xprofilex

@@ -2,7 +2,7 @@
 #
 # LXDM wrapper to run around X sessions.
 
-exec 1>/tmp/xinit.log 2>&1
+exec 1>$HOME/.cache/xinit.log 2>&1
 
 echo "Running X session wrapper"
 
@@ -57,32 +57,24 @@ fi
 
 
 if [ $# -eq 1 -a -n "$1" ]; then
-  case $1 in
-      spectrwm|spectr   ) SESSION=spectrwm;;
-      cinnamon          ) SESSION=cinnamon-session;;
-      i3|i3wm           ) SESSION=i3;;
-      kde               ) SESSION=startplasma-x11;;
-      awesome           ) SESSION=awesome;;
-      xmonad            ) SESSION=xmonad;;
-      deepin            ) SESSION=startdde;;
-      xfce|xfce4        ) SESSION=startxfce4;;
-      # xfce|xfce4        ) SESSION=xfce4-session;;
-      # deepin            ) SESSION=/usr/bin/startlxde;;
-      xfce|xfce4        ) SESSION=startxfce4;;
-      # Nenhuma sessão conhecida, tenta como comando
-      *                 ) SESSION=$1;;
-  esac
+  SESSION=$1
 else
-# default session
-# session=${1:-spectrwm}
-	# SESSION=spectrwm
-	SESSION=cinnamon-session
-	# SESSION=i3
+	SESSION=xfce4
 fi
-# Para iniciar com outro é:
-# xinit sessão
-# startx ~/.xinitrc sessão
 
-exec $SESSION > /tmp/session.log 2>&1
+case $SESSION in
+  spectrwm|spectr   ) SESSION=spectrwm;;
+  cinnamon          ) SESSION=cinnamon-session;;
+  i3|i3wm           ) SESSION=i3;;
+  kde               ) SESSION=startplasma-x11;;
+  #exec ck-launch-session dbus-launch --sh-syntax --exit-with-session startkde
+  awesome           ) SESSION=awesome;;
+  xmonad            ) SESSION=xmonad;;
+  deepin            ) SESSION=startdde;;
+  xfce|xfce4        ) SESSION=startxfce4;;
+  # Nenhuma sessão conhecida, tenta como comando
+esac
+
+exec $SESSION > $HOME/.cache/session.log 2>&1
 
 echo "X session wrapper complete, running session $LXSESSION"

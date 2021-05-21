@@ -1,8 +1,6 @@
 #!/bin/bash
-#set +x
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx
 #[[ -n $DISPLAY && $XDG_VTNR -eq 1 && $TERM =~ (xterm|st) ]] && tmux
-# [[ -f $HOME/.sudo ]] && source $HOME/.sudo
 
 export path="
 /bin
@@ -43,24 +41,20 @@ $HOME/.gem/ruby/2.1.0
 $HOME/.yarn/bin
 $HOME/.config/yarn/global/node_modules/.bin
 $HOME/.local/bin
-
 "
 
 # SUDO
 if [[ $(id -u) -eq 0 ]] ;then
-	alias yay='sudo -u sudo yay'
-	alias trizen='sudo -u sudo trizen'
-	alias makepkg='sudo -u sudo makepkg'
+  for i in yay trizen makepkg
+  do
+    alias "$i"="sudo -u sudo $i"
+  done
 else
-	alias pm-suspend='sudo pm-suspend'
-	alias pkill='sudo pkill'
-	alias fdisk='sudo fdisk'
-	alias pacman='sudo pacman'
-	alias fdisk='sudo fdisk'
-	alias systemctl='sudo systemctl'
-	alias nmcli='sudo nmcli'
+  for i in pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig
+   do
+    alias "$i"="sudo $i"
+  done
 fi
-
 # colors
 darkgrey="$(tput bold ; tput setaf 0)"
 white="$(tput bold ; tput setaf 7)"
@@ -78,7 +72,7 @@ export ANDROID_HOME=/opt/android-sdk
 #Manuais
 export EDITOR="kak"
 export TERMINAL=kitty
-export BROWSER=firefox
+export BROWSER=opera
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 #export manvim="/usr/share/vim/$(ls /usr/share/vim | grep [1-9])/doc"
 export manmutt="/usr/share/doc/mutt"
@@ -91,7 +85,7 @@ export NVM_DIR="$HOME/.nvm"
 
 #Renames
 alias ls='ls --color=always -C --group-directories-first'
-alias ls='colorls --sd'
+#alias ls='colorls --sd'
 alias dir='dir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -111,12 +105,15 @@ alias sn="sncli"
 alias q='exit'
 alias x='startx'
 alias kl='killall'
+alias yt='youtube-dl'
 alias ..='cd .. && ls'
 alias ...='cd ../.. && ls'
 alias ....='cd ../../.. && ls'
 
 #atalhos
-alias mountp="mount -o uid=$(id -u $USER),gid=$(id -g $USER)"
+alias funtoomount="mount /dev/mapper/lvm-funtoo /mnt/funtoo && cd /mnt/funtoo && mount -t proc none proc && mount --rbind /sys sys && mount --rbind /dev dev"
+alias funtoolog="cd /mnt/funtoo && sudo env -i HOME=/root TERM=$TERM chroot . bash -l"
+alias mountp="mount -w -o uid=$(id -u $USER),gid=$(id -g $USER)"
 alias bs='source ~/.bashrc && source ~/.bash_profile'
 alias ss='systemctl suspend -i'
 # alias cdr='cd - &> /dev/null'

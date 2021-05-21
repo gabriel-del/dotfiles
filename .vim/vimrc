@@ -2,19 +2,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'xavierd/clang_complete'
-Plugin 'thaerkh/vim-indentguides' "botei depois
-
-call vundle#end()            " required
-
-" Vundle -----------------------------------------------------------------------
-
 " file type and syntax highliting on
 filetype plugin indent on
 syntax on
@@ -165,6 +152,12 @@ Plug 'dag/vim-fish'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'VundleVim/Vundle.vim'
+Plug 'davidhalter/jedi-vim'
+Plug 'xavierd/clang_complete'
+Plug 'thaerkh/vim-indentguides' "botei depois
+
+
 call plug#end()
 
 "Plugins
