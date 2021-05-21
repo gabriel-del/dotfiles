@@ -82,7 +82,7 @@
     <property name="plugin-14" type="string" value="actions"/>
     <property name="plugin-7" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="chromium.instance10486;chromium.instance1363;chromium.instance1420;chromium.instance142029;chromium.instance1470;chromium.instance1531;chromium.instance1659;chromium.instance1693;chromium.instance196465;chromium.instance1966;chromium.instance2099;chromium.instance21490;chromium.instance2170;chromium.instance2331;chromium.instance2649;chromium.instance2697;chromium.instance2822;chromium.instance2845;chromium.instance2857;chromium.instance3095;chromium.instance3729;chromium.instance444257;chromium.instance5865;chromium.instance6823;chromium.instance7411;chromium.instance9444;vlc"/>
+      <property name="mpris-players" type="string" value="chromium.instance10486;chromium.instance1363;chromium.instance1420;chromium.instance142029;chromium.instance1470;chromium.instance1531;chromium.instance1659;chromium.instance1693;chromium.instance196465;chromium.instance1966;chromium.instance2099;chromium.instance21490;chromium.instance2170;chromium.instance2331;chromium.instance2525;chromium.instance2649;chromium.instance2697;chromium.instance2822;chromium.instance2845;chromium.instance2857;chromium.instance3095;chromium.instance3729;chromium.instance444257;chromium.instance5865;chromium.instance6823;chromium.instance7411;chromium.instance9444;vlc"/>
     </property>
   </property>
 </channel>
