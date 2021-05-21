@@ -47,12 +47,12 @@ $HOME/.local/bin
 if [[ $(id -u) -eq 0 ]] ;then
   for i in yay trizen makepkg
   do
-    alias "$i"="sudo -u sudo $i"
+    alias "$i"="sudo -E -u sudo $i"
   done
 else
-  for i in pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig
-   do
-    alias "$i"="sudo $i"
+  for i in pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo
+    do
+    alias "$i"="sudo -E $i"
   done
 fi
 # colors
