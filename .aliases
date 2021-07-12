@@ -1,9 +1,10 @@
 #!/bin/bash
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx
+#[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx
 #[[ -n $DISPLAY && $XDG_VTNR -eq 1 && $TERM =~ (xterm|st) ]] && tmux
 
 export path="
 /bin
+#comment test
 /sbin
 /usr/bin
 /usr/sbin
@@ -42,6 +43,7 @@ $HOME/.yarn/bin
 $HOME/.config/yarn/global/node_modules/.bin
 $HOME/.local/bin
 "
+export path="$(/bin/echo "$path" | /bin/sed 's/#.*$//' | /bin/sed '/^$/d' | /bin/sed 's/ //g' | /bin/tr '\n' ':')"
 
 # SUDO
 if [[ $(id -u) -eq 0 ]] ;then
@@ -50,11 +52,22 @@ if [[ $(id -u) -eq 0 ]] ;then
     alias "$i"="sudo -E -u sudo $i"
   done
 else
-  for i in pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo
+  for i in ego epro cfdisk etc-update shutdown genkernel blkid ip df iw lscpu uname rc-update su cryptsetup pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo
     do
     alias "$i"="sudo -E $i"
   done
-fi
+  fi
+
+# Install
+OS=$(cat /etc/os-release | grep ^ID | cut -d= -f2-)
+case $OS in
+    artix) 	alias i="pacman -S --noconfirm"
+                   	alias I="yay -S --noconfirm" ;;
+    funtoo)	alias i="emerge --autounmask --autounmask-write -v" ;;
+    *) echo "Distribution not recognized" ;;
+esac
+
+
 # colors
 darkgrey="$(tput bold ; tput setaf 0)"
 white="$(tput bold ; tput setaf 7)"
@@ -72,7 +85,7 @@ export ANDROID_HOME=/opt/android-sdk
 #Manuais
 export EDITOR="kak"
 export TERMINAL=kitty
-export BROWSER=opera
+export BROWSER=google-chrome-stable
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 #export manvim="/usr/share/vim/$(ls /usr/share/vim | grep [1-9])/doc"
 export manmutt="/usr/share/doc/mutt"
@@ -122,20 +135,6 @@ alias tempo="curl http://wttr.in/$(basename "$(ls -l | grep localtime | cut -d'>
 alias pop='Popcorn-Time'
 alias dddd='sdcv -c'
 
-#Install
-# alias dprograms='/root/PublicShare/Dprograms/Dprograms.sh'
-# alias d='dprograms -i'
-# alias D='dprograms -I'
-# alias ds='dprograms -s'
-# alias Du='dprograms -u'
-# alias dr='dprograms -r'
-# alias DD='dsync -cus'
-alias i="pacman -S --noconfirm"
-alias is="pacman -Ss"
-alias I="yay -S --noconfirm"
-alias Is="yay -Ss"
-
-
 #Tmux
 alias t="tmux"
 alias T="tmuxp load"
@@ -167,5 +166,3 @@ alias c="$@ source c"
 #alias ranger='ranger --choosedir=$HOME/.rangerdir;cd "$(cat $HOME/.rangerdir)"'
 alias cinnamonbackup="dconf dump /org/cinnamon/ > $HOME/.cinnamon.config"
 alias cinnamonrestore="dconf load /org/cinnamon/ < $HOME/.cinnamon.config"
-
-

@@ -18,9 +18,6 @@
         <value type="int" value="4"/>
         <value type="int" value="5"/>
         <value type="int" value="6"/>
-        <value type="int" value="7"/>
-        <value type="int" value="9"/>
-        <value type="int" value="10"/>
         <value type="int" value="11"/>
         <value type="int" value="12"/>
         <value type="int" value="13"/>
@@ -63,6 +60,10 @@
       <property name="known-items" type="array">
         <value type="string" value="vlc"/>
       </property>
+      <property name="names-ordered" type="array">
+        <value type="string" value="thunar"/>
+        <value type="string" value="notification-daemon"/>
+      </property>
     </property>
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
@@ -75,6 +76,7 @@
     </property>
     <property name="plugin-12" type="string" value="clock">
       <property name="mode" type="uint" value="2"/>
+      <property name="timezone" type="string" value=""/>
     </property>
     <property name="plugin-13" type="string" value="separator">
       <property name="style" type="uint" value="0"/>

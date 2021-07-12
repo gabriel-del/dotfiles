@@ -1,7 +1,8 @@
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] &&  /bin/startx
 if [[ $(ps --no-header --pid=$PPID --format=cmd) != "fish" ]] ;then exec fish ;fi
+
 if [ -f ~/.aliases ]; then
-  . ~/.aliases
-export PATH="$(echo $path | sed '/^#/d'  | sed 's/ /:/g')"
+source ~/.aliases
 fi
 
 [ -r /usr/share/bash-completion/completions ] &&

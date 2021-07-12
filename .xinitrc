@@ -59,7 +59,7 @@ fi
 if [ $# -eq 1 -a -n "$1" ]; then
   SESSION=$1
 else
-	SESSION=xfce4
+	SESSION=bspwm
 fi
 
 case $SESSION in
@@ -72,9 +72,11 @@ case $SESSION in
   xmonad            ) SESSION=xmonad;;
   deepin            ) SESSION=startdde;;
   xfce|xfce4        ) SESSION=startxfce4;;
-  # Nenhuma sessão conhecida, tenta como comando
+  gnome	            ) export XDG_MENU_PREFIX=gnome- && SESSION=gnome-session;;
+  bspwm	            ) SESSION=bspwm;;
+  # Nenhuma sessao conhecida, tenta como comando
 esac
 
-exec $SESSION > $HOME/.cache/session.log 2>&1
+exec  $SESSION &> $HOME/.cache/session.log 2>&1
 
 echo "X session wrapper complete, running session $LXSESSION"

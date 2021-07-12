@@ -42,10 +42,11 @@ conky.config = {
 
 conky.text = [[
 ${font Latin Modern Mono Caps:bold:size=24}${alignc}${color 00ffae}$nodename
-${font Noto Sans:bold:size=8}${alignc}${exec hostnamectl | grep System | cut -c21-40}
+#${font Noto Sans:bold:size=8}${alignc}${exec hostnamectl | grep System | cut -c21-40}
+${font Noto Sans:bold:size=8}${alignc}${exec hostname}
 ${font Noto Sans:bold:size=8}${alignc}${desktop_name}
-${alignc}   ${exec hostnamectl | grep Architecture | cut -c7-30}
-${alignc}   ${exec hostnamectl | grep Kernel | cut -c13-32}
+#${alignc}   ${exec hostnamectl | grep Architecture | cut -c7-30}
+#${alignc}   ${exec hostnamectl | grep Kernel | cut -c13-32}
 ${font Entopia:bold:size=12}${color 33E9FF}PERFORMANCE ${hr 2}${font}
 ${offset 15}${color FFFDE2}System Uptime ${alignr}$color $uptime
 ${offset 15}${color FFFDE2}Swap: ${alignr}$color $swap/$swapmax 
@@ -59,12 +60,12 @@ ${offset 4}${color FFFDE2}home (${fs_type /home}) ${color yellow}${alignr}${fs_u
 ${offset 4}${color yellow}${fs_used_perc /home/}% $color${fs_bar 4 /home/}
 ${font Entopia:bold:size=12}${color green}NETWORK ${hr 2}${font DejaVu Sans Mono:size=9}
 ${offset 15}${color}Ext IP Addr ${color red}${alignr}${exec curl ipinfo.io/ip}
-${offset 5}${font Entopia:bold:size=12}${color orange}${wireless_essid wlan0} ${stippled_hr 1}
+${offset 5}${font Entopia:bold:size=12}${color orange}${wireless_essid wlp6s0} ${stippled_hr 1}
 ${offset 15}${color}${font DejaVu Sans Mono:size=9}WiFi ${alignr}${wireless_link_qual_perc 
-wlan0}%(${wireless_link_qual wlan0}/${wireless_link_qual_max wlan0}) ${color red}${addr wlan0}
-${offset 15}${font}${color green}▼ $color${totaldown wlan0} ${alignr}${color green}▲ $color${totalup wlan0}
-${color black}${downspeedgraph wlan0 32,120 ff0000 0000ff}${color black}${upspeedgraph wlan0 32,120 0000ff ff0000}
-$color${font DejaVu Sans Mono:size=8} ▼ ${downspeed wlan0}${alignc}${color orange} ${wireless_essid wlan0}${alignr}${color}▲ ${upspeed wlan0}
+wlp6s0}%(${wireless_link_qual wlp6s0}/${wireless_link_qual_max wlp6s0}) ${color red}${addr wlp6s0}
+${offset 15}${font}${color green}▼ $color${totaldown wlp6s0} ${alignr}${color green}▲ $color${totalup wlp6s0}
+${color black}${downspeedgraph wlp6s0 32,120 ff0000 0000ff}${color black}${upspeedgraph wlp6s0 32,120 0000ff ff0000}
+$color${font DejaVu Sans Mono:size=8} ▼ ${downspeed wlp6s0}${alignc}${color orange} ${wireless_essid wlp6s0}${alignr}${color}▲ ${upspeed wlp6s0}
 ${font Entopia:bold:size=12}${color F600AA}HDD ${hr 2}
 ${alignc}${font}${color white}${font DejaVu Sans Mono:size=8}${color white}
 ${diskio /dev/sda}: ${color black}${diskiograph /dev/sda 32,80 a0af00 00110f}
