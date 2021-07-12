@@ -1,0 +1,18 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/mapper/lvm-arch UUID=fa5e02d4-50fa-43b1-a101-bbc2127247b6
+/dev/mapper/lvm-artix	/         	ext4      	rw,relatime	0 1
+
+# /dev/sda1 UUID=013e1dc7-cb3f-4a90-8b4e-251179adcbe5
+/dev/sda1           	/boot     	ext4      	rw,relatime	0 2
+
+# /dev/sda3 UUID=D191-2C74
+/dev/sda3           	/EFI      	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+
+# /dev/mapper/home UUID=89de0b70-35fb-4ff3-a41f-d24cc6d5701a
+/dev/mapper/home    	/home     	ext4      	rw,relatime	0 2
+
+/home/.swap         	none      	swap      	defaults  	0 0
+
