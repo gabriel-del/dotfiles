@@ -9,11 +9,8 @@ set-option global ui_options ncurses_status_on_top=false
 # Plugins
 source "%val{config}/plugins/plug.kak/rc/plug.kak"
 plug "andreyorst/plug.kak" noload
-plug "alexherbo2/search-highlighting.kak" %{
-        hook global WinCreate .* %{ search-highlighter-enable }
-}
 plug "andreyorst/smarttab.kak" defer expandtab %{
-    set-option global softtabstop 2
+set-option global softtabstop 2
 } 
 colorscheme torchwood
 

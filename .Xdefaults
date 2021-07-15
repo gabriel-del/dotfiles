@@ -68,7 +68,6 @@ XTerm*cutNewline:             false
 XTerm*highlightSelection:     true
 
 ! cursor
-Xcursor.theme:                Adwaita
 Xcursor.size:                 14
 
 ! xft
@@ -80,3 +79,6 @@ urxvt.keysym.End: \033[4~
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
+Xcursor.theme: Sweet-cursors
+
+Xcursor.size: 14

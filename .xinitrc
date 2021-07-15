@@ -59,7 +59,7 @@ fi
 if [ $# -eq 1 -a -n "$1" ]; then
   SESSION=$1
 else
-	SESSION=bspwm
+	SESSION=lxqt
 fi
 
 case $SESSION in
@@ -74,6 +74,7 @@ case $SESSION in
   xfce|xfce4        ) SESSION=startxfce4;;
   gnome	            ) export XDG_MENU_PREFIX=gnome- && SESSION=gnome-session;;
   bspwm	            ) SESSION=bspwm;;
+  lxqt		    ) SESSION=startlxqt;;
   # Nenhuma sessao conhecida, tenta como comando
 esac
 
