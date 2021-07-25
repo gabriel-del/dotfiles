@@ -9,3 +9,6 @@ fi
   . /usr/share/bash-completion/completions/*
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+[ -f  /opt/asdf-vm/asdf.sh ] && source /opt/asdf-vm/asdf.sh
+

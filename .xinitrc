@@ -74,7 +74,8 @@ case $SESSION in
   xfce|xfce4        ) SESSION=startxfce4;;
   gnome	            ) export XDG_MENU_PREFIX=gnome- && SESSION=gnome-session;;
   bspwm	            ) SESSION=bspwm;;
-  lxqt		    ) SESSION=startlxqt;;
+  lxqt		    			) SESSION=startlxqt;;
+  lxde							) SESSION=startlxde;;
   # Nenhuma sessao conhecida, tenta como comando
 esac
 

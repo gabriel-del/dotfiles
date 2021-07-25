@@ -3,8 +3,8 @@ shopt -s expand_aliases
 alias listfiles="find . -maxdepth 1 -type f -not -path '*/\.*' | sort"
 
 if [[ $# -eq 1 ]] && [[ $1 =~ / || $1 =~ ^\.. ]] ;then
-  $EDITOR "$1"
+  sudo -E $EDITOR "$1"
  else
-  $EDITOR "$(listfiles | grep "$1" | sed -n "$([[ -n $2 ]] && echo $2 || echo 1 )"p ;)"
+  sudo -E $EDITOR "$(listfiles | grep "$1" | sed -n "$([[ -n $2 ]] && echo $2 || echo 1 )"p ;)"
 fi
  

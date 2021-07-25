@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=picom --vsync -r 12 --no-fading-openclose -b
+Name=Picom
+OnlyShowIn=LXQt;
+Type=Application
+Version=1.0

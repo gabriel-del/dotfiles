@@ -3,3 +3,5 @@ if test -f ~/.aliases
     set -x PATH (/bin/echo "$path"  | string split ':')
 end
 
+[ -f /opt/asdf-vm/asdf.fish ] && source /opt/asdf-vm/asdf.fish
+

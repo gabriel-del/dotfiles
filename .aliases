@@ -42,6 +42,7 @@ $HOME/.gem/ruby/2.1.0
 $HOME/.yarn/bin
 $HOME/.config/yarn/global/node_modules/.bin
 $HOME/.local/bin
+$HOME/.rvm/bin
 "
 export path="$(/bin/echo "$path" | /bin/sed 's/#.*$//' | /bin/sed '/^$/d' | /bin/sed 's/ //g' | /bin/tr '\n' ':')"
 
@@ -166,3 +167,5 @@ alias c="$@ source c"
 #alias ranger='ranger --choosedir=$HOME/.rangerdir;cd "$(cat $HOME/.rangerdir)"'
 alias cinnamonbackup="dconf dump /org/cinnamon/ > $HOME/.cinnamon.config"
 alias cinnamonrestore="dconf load /org/cinnamon/ < $HOME/.cinnamon.config"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
