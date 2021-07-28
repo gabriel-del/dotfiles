@@ -364,47 +364,43 @@
         <direction>down</direction>
       </action>
     </keybind>
-
-<!-- tiling -->
-      <keybind key="W-Left">
-    <action name="Unmaximize" />
-    <action name="MoveResizeTo">
-      <x>0</x>
-      <y>0</y>
-      <width>50%</width>
-      <height>100%</height>
-    </action>
-  </keybind>
-
-  <keybind key="W-Right">
-    <action name="Unmaximize" />
-    <action name="MoveResizeTo">
-      <x>-0</x>
-      <y>0</y>
-      <width>50%</width>
-      <height>100%</height>
-    </action>
-  </keybind>
-
-  <keybind key="W-Up">
-    <action name="Unmaximize" />
-    <action name="MoveResizeTo">
-      <x>0</x>
-      <y>0</y>
-      <width>100%</width>
-      <height>50%</height>
-    </action>
-  </keybind>
-
-  <keybind key="W-Down">
-    <action name="Unmaximize" />
-    <action name="MoveResizeTo">
-      <x>0</x>
-      <y>-0</y>
-      <width>100%</width>
-      <height>50%</height>
-    </action>
-  </keybind>
+    <!-- tiling -->
+    <keybind key="W-Left">
+      <action name="Unmaximize"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <width>50%</width>
+        <height>100%</height>
+      </action>
+    </keybind>
+    <keybind key="W-Right">
+      <action name="Unmaximize"/>
+      <action name="MoveResizeTo">
+        <x>-0</x>
+        <y>0</y>
+        <width>50%</width>
+        <height>100%</height>
+      </action>
+    </keybind>
+    <keybind key="W-Up">
+      <action name="Unmaximize"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <width>100%</width>
+        <height>50%</height>
+      </action>
+    </keybind>
+    <keybind key="W-Down">
+      <action name="Unmaximize"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>-0</y>
+        <width>100%</width>
+        <height>50%</height>
+      </action>
+    </keybind>
     <!-- Keybindings for running applications -->
     <keybind key="W-e">
       <action name="Execute">
@@ -421,12 +417,51 @@
         <command>kitty</command>
       </action>
     </keybind>
-    <keybind key="W-F11">
+    <keybind key="W-S-F11">
       <action name="ToggleFullscreen"/>
     </keybind>
-    
+    <keybind key="W-F11">
+      <action name="ToggleMaximize"/>
+    </keybind>
+  <keybind key="XF86MonBrightnessUp">
+      <action name="Execute">
+        <command>~/.bin/light.sh up</command>
+      </action>
+    </keybind>
+    <keybind key="XF86MonBrightnessDown">
+      <action name="Execute"> 
+        <command>~/.bin/light.sh down</command>
+      </action>
+    </keybind>
+<!---volume keys-->
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute">
+        <execute>~/.bin/volume.sh up</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+        <execute>~/.bin/volume.sh down</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute">
+        <execute>~/.bin/volume.sh mute</execute>
+      </action>
+    </keybind>
+    <!-- Screenshot -->
+    <keybind key="Print">
+    	<action name="Execute">
+      	 <command>gnome-screenshot</command>
+      </action>
+    </keybind>
+    <keybind key="W-Print">
+    	<action name="Execute">
+      	 <command>gnome-screenshot -i</command>
+      </action>
+    </keybind>
   </keyboard>
-  <mouse>
+    <mouse>
     <dragThreshold>1</dragThreshold>
     <!-- number of pixels the mouse must move before a drag begins -->
     <doubleClickTime>500</doubleClickTime>
@@ -785,17 +820,17 @@
     <manageDesktops>yes</manageDesktops>
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
   </menu>
- <applications>
-   <application class="*">
-     <decor>no</decor>
-     <maximized>true</maximized>
-     <focus>yes</focus>
-     <layer>normal</layer>
-     <fullscreen>no</fullscreen>
-  </application>
-   <application class="Conky">
-     <maximized>false</maximized>
-     <layer>below</layer>
-  </application>
+  <applications>
+    <application class="*">
+      <decor>no</decor>
+      <maximized>true</maximized>
+      <focus>yes</focus>
+      <layer>normal</layer>
+      <fullscreen>no</fullscreen>
+    </application>
+    <application class="Conky">
+      <maximized>false</maximized>
+      <layer>below</layer>
+    </application>
   </applications>
 </openbox_config>
