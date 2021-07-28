@@ -460,6 +460,9 @@
       	 <command>gnome-screenshot -i</command>
       </action>
     </keybind>
+    <keybind key="W-d">
+        <action name="ToggleShowDesktop"/>
+    </keybind>
   </keyboard>
     <mouse>
     <dragThreshold>1</dragThreshold>
