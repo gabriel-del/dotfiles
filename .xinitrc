@@ -76,6 +76,7 @@ case $SESSION in
   bspwm	            ) SESSION=bspwm;;
   lxqt		    			) SESSION=startlxqt;;
   lxde							) SESSION=startlxde;;
+  openbox						) SESSION=openbox-session
   # Nenhuma sessao conhecida, tenta como comando
 esac
 
