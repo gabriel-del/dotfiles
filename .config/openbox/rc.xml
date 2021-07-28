@@ -364,6 +364,47 @@
         <direction>down</direction>
       </action>
     </keybind>
+
+<!-- tiling -->
+      <keybind key="W-Left">
+    <action name="Unmaximize" />
+    <action name="MoveResizeTo">
+      <x>0</x>
+      <y>0</y>
+      <width>50%</width>
+      <height>100%</height>
+    </action>
+  </keybind>
+
+  <keybind key="W-Right">
+    <action name="Unmaximize" />
+    <action name="MoveResizeTo">
+      <x>-0</x>
+      <y>0</y>
+      <width>50%</width>
+      <height>100%</height>
+    </action>
+  </keybind>
+
+  <keybind key="W-Up">
+    <action name="Unmaximize" />
+    <action name="MoveResizeTo">
+      <x>0</x>
+      <y>0</y>
+      <width>100%</width>
+      <height>50%</height>
+    </action>
+  </keybind>
+
+  <keybind key="W-Down">
+    <action name="Unmaximize" />
+    <action name="MoveResizeTo">
+      <x>0</x>
+      <y>-0</y>
+      <width>100%</width>
+      <height>50%</height>
+    </action>
+  </keybind>
     <!-- Keybindings for running applications -->
     <keybind key="W-e">
       <action name="Execute">
@@ -379,6 +420,9 @@
       <action name="Execute">
         <command>kitty</command>
       </action>
+    </keybind>
+    <keybind key="W-F11">
+      <action name="ToggleFullscreen"/>
     </keybind>
     
   </keyboard>
@@ -741,13 +785,17 @@
     <manageDesktops>yes</manageDesktops>
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
   </menu>
-  <applications>
+ <applications>
    <application class="*">
      <decor>no</decor>
      <maximized>true</maximized>
      <focus>yes</focus>
      <layer>normal</layer>
-     <fullscreen>yes</fullscreen>
+     <fullscreen>no</fullscreen>
+  </application>
+   <application class="Conky">
+     <maximized>false</maximized>
+     <layer>below</layer>
   </application>
   </applications>
 </openbox_config>
