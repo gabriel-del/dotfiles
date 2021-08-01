@@ -423,17 +423,17 @@
     <keybind key="W-F11">
       <action name="ToggleMaximize"/>
     </keybind>
-  <keybind key="XF86MonBrightnessUp">
+    <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
         <command>~/.bin/light.sh up</command>
       </action>
     </keybind>
     <keybind key="XF86MonBrightnessDown">
-      <action name="Execute"> 
+      <action name="Execute">
         <command>~/.bin/light.sh down</command>
       </action>
     </keybind>
-<!---volume keys-->
+    <!---volume keys-->
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
         <execute>~/.bin/volume.sh up</execute>
@@ -451,20 +451,20 @@
     </keybind>
     <!-- Screenshot -->
     <keybind key="Print">
-    	<action name="Execute">
-      	 <command>gnome-screenshot</command>
+      <action name="Execute">
+        <command>gnome-screenshot</command>
       </action>
     </keybind>
     <keybind key="W-Print">
-    	<action name="Execute">
-      	 <command>gnome-screenshot -i</command>
+      <action name="Execute">
+        <command>gnome-screenshot -i</command>
       </action>
     </keybind>
     <keybind key="W-d">
-        <action name="ToggleShowDesktop"/>
+      <action name="ToggleShowDesktop"/>
     </keybind>
   </keyboard>
-    <mouse>
+  <mouse>
     <dragThreshold>1</dragThreshold>
     <!-- number of pixels the mouse must move before a drag begins -->
     <doubleClickTime>500</doubleClickTime>

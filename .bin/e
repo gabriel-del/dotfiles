@@ -7,4 +7,4 @@ if [[ $# -eq 1 ]] && [[ $1 =~ / || $1 =~ ^\.. ]] ;then
  else
   sudo -E $EDITOR "$(listfiles | grep "$1" | sed -n "$([[ -n $2 ]] && echo $2 || echo 1 )"p ;)"
 fi
- 
+
