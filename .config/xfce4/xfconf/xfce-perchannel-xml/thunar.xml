@@ -13,7 +13,7 @@
   <property name="last-window-width" type="int" value="1366"/>
   <property name="last-window-height" type="int" value="384"/>
   <property name="last-side-pane" type="string" value="void"/>
-  <property name="last-show-hidden" type="bool" value="true"/>
+  <property name="last-show-hidden" type="bool" value="false"/>
   <property name="last-separator-position" type="int" value="170"/>
   <property name="misc-file-size-binary" type="bool" value="false"/>
   <property name="default-view" type="string" value="void"/>

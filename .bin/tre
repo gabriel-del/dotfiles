@@ -1,10 +1,11 @@
 #!/bin/bash
 
+#set -x
 #tre() { tree -fi $* | sed -n "2,+$(tree -fi $* | sed '1,4'd | wc -l)"p ;}
 #tres() { for i in $(tre); do [[ -f "$i" ]] && [[ -n "$(cat "$i" | grep "$*")" ]] && echo "$i" ;done ;}
 
 
 # for i in $(tree -fi | sed -n "2,+$(tree -fi | sed '1,4'd | wc -l)"p)
  for i in $(tree -fi --noreport)
- do [[ -f "$i" ]] && [[ -n "$(cat "$i" | grep "$*")" ]] && echo "$i"
+ do [[ -f "$i" ]] && [[ -n "$(grep "$*" "$i")" ]] && echo "$i"
  done

@@ -423,28 +423,28 @@
     <keybind key="W-F11">
       <action name="ToggleMaximize"/>
     </keybind>
-    <keybind key="XF86MonBrightnessUp">
+    <keybind key="S-XF86MonBrightnessUp">
       <action name="Execute">
         <command>~/.bin/light.sh up</command>
       </action>
     </keybind>
-    <keybind key="XF86MonBrightnessDown">
+    <keybind key="S-XF86MonBrightnessDown">
       <action name="Execute">
         <command>~/.bin/light.sh down</command>
       </action>
     </keybind>
     <!---volume keys-->
-    <keybind key="XF86AudioRaiseVolume">
+    <keybind key="S-XF86AudioRaiseVolume">
       <action name="Execute">
         <execute>~/.bin/volume.sh up</execute>
       </action>
     </keybind>
-    <keybind key="XF86AudioLowerVolume">
+    <keybind key="S-XF86AudioLowerVolume">
       <action name="Execute">
         <execute>~/.bin/volume.sh down</execute>
       </action>
     </keybind>
-    <keybind key="XF86AudioMute">
+    <keybind key="S-XF86AudioMute">
       <action name="Execute">
         <execute>~/.bin/volume.sh mute</execute>
       </action>
