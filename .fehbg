@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-scale '/home/toor/Pictures/backgrounds/pinguim.png' 
+feh --no-fehbg --bg-scale '/home/toor/Templates/pinguim.png' 

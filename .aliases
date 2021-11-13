@@ -42,8 +42,8 @@ $HOME/.gem/ruby/2.1.0
 $HOME/.yarn/bin
 $HOME/.config/yarn/global/node_modules/.bin
 $HOME/.local/bin
-$HOME/.rvm/bin
-"
+$HOME/.rvm/bin"
+
 export path="$(/bin/echo "$path" | /bin/sed 's/#.*$//' | /bin/sed '/^$/d' | /bin/sed 's/ //g' | /bin/tr '\n' ':')"
 
 # SUDO
@@ -53,7 +53,7 @@ if [[ $(id -u) -eq 0 ]] ;then
     alias "$i"="sudo -E -u sudo $i"
   done
 else
-  for i in ego epro cfdisk etc-update shutdown genkernel blkid ip df iw lscpu uname rc-update su cryptsetup pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo
+  for i in mkinitcpio  cryptsetup ego epro cfdisk etc-update shutdown genkernel blkid ip df iw lscpu uname rc-update su cryptsetup pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo
     do
     alias "$i"="sudo -E $i"
   done
@@ -62,10 +62,10 @@ else
 # Install
 OS=$(cat /etc/os-release | grep ^ID | cut -d= -f2-)
 case $OS in
-    artix) 	alias i="pacman -S --noconfirm"
-                   	alias I="yay -S --noconfirm" ;;
+    artix|arch) 	alias i="pacman -S --noconfirm"
+                   	alias ii="yay -S --noconfirm" ;;
     funtoo)	alias i="emerge --autounmask --autounmask-write -v" ;;
-    *) echo "Distribution not recognized" ;;
+    *) echo "$HOME/.aliases: Distribution not recognized" ;;
 esac
 
 

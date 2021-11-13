@@ -3,6 +3,7 @@ if [[ $(ps --no-header --pid=$PPID --format=cmd) != "fish" ]] ;then exec fish ;f
 
 if [ -f ~/.aliases ]; then
 source ~/.aliases
+export PATH=$path
 fi
 
 [ -r /usr/share/bash-completion/completions ] &&

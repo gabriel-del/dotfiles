@@ -8,9 +8,9 @@ then
 fi
 
 # wallpaper
-exec feh --bg-scale $HOME/Pictures/backgrounds/pinguim.png &
+exec feh --bg-scale $HOME/Templates/pinguim.png &
 which picom && picom -b
 which conky && $HOME/.config/conky/conky.sh &
-# which syncthing && /usr/bin/syncthing --no-browser --logfile=$HOME/.cache/syncthing.log -no-restart -logflags=3 &
+which syncthing && /usr/bin/syncthing --no-browser --logfile=$HOME/.cache/syncthing.log -no-restart -logflags=3 &
 [[ $(cat /proc/swaps | wc -l) -eq 1 ]] && sudo swapon /home/.swap
 [[ -f "$HOME/.xprofilex" ]] && source $HOME/.xprofilex
