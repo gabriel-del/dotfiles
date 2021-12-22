@@ -42,7 +42,8 @@ $HOME/.gem/ruby/2.1.0
 $HOME/.yarn/bin
 $HOME/.config/yarn/global/node_modules/.bin
 $HOME/.local/bin
-$HOME/.rvm/bin"
+$HOME/.rvm/bin
+"
 
 export path="$(/bin/echo "$path" | /bin/sed 's/#.*$//' | /bin/sed '/^$/d' | /bin/sed 's/ //g' | /bin/tr '\n' ':')"
 
@@ -53,7 +54,7 @@ if [[ $(id -u) -eq 0 ]] ;then
     alias "$i"="sudo -E -u sudo $i"
   done
 else
-  for i in mkinitcpio  cryptsetup ego epro cfdisk etc-update shutdown genkernel blkid ip df iw lscpu uname rc-update su cryptsetup pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo
+  for i in mkinitcpio killall vgs vgchange cryptsetup ego epro cfdisk etc-update shutdown genkernel blkid ip df iw lscpu uname rc-update su cryptsetup pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo
     do
     alias "$i"="sudo -E $i"
   done
@@ -162,11 +163,11 @@ alias listfiles="find . -maxdepth 1 -type f -not -path '*/\.*' | sort"
 alias listdirs="find . -mindepth 1 -maxdepth 1 -type d -not -path '*/\.*' | sort"
 alias out="pkill -u $USER"
 alias gs='git status'
-alias c="$@ source c"
-#alias d="$@ source d"
+#alias c="$@ source c"
+alias c="$@ source $HOME/.bin/c"
 #alias ranger='ranger --choosedir=$HOME/.rangerdir;cd "$(cat $HOME/.rangerdir)"'
 alias cinnamonbackup="dconf dump /org/cinnamon/ > $HOME/.cinnamon.config"
 alias cinnamonrestore="dconf load /org/cinnamon/ < $HOME/.cinnamon.config"
 alias list-packages='pacman -Qet | awk "{print $1}"'
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" #Da erro no fish
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

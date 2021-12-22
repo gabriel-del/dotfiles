@@ -3,8 +3,10 @@ Plug '907th/vim-auto-save'
 Plug 'dag/vim-fish'
 Plug 'thaerkh/vim-indentguides' "botei depois
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'preservim/nerdcommenter'
+Plug 'numToStr/Comment.nvim'
 call plug#end()
+
+lua require('Comment').setup()
 
 "907th/vim-auto-save
 let g:auto_save = 1

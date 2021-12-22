@@ -1,5 +1,5 @@
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] &&  /bin/startx
-if [[ $(ps --no-header --pid=$PPID --format=cmd) != "fish" ]] ;then exec fish ;fi
+[[ $(ps --no-header --pid=$PPID --format=cmd) != "fish" ]] && exec fish
 
 if [ -f ~/.aliases ]; then
 source ~/.aliases

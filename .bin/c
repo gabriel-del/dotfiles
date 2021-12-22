@@ -1,11 +1,10 @@
 #!/bin/bash
-shopt -s expand_aliases
-alias ls="ls --color=always -C --group-directories-first -w $(tput cols)"
-alias listdirs="find . -mindepth 1 -maxdepth 1 -type d -not -path '*/\.*' | sort"
+LS () { ls --color=always -C --group-directories-first -w $(tput cols) ;}
+listdirs () { find . -mindepth 1 -maxdepth 1 -type d -not -path '*/\.*' | sort ;}
 if [[ $# -eq 1 ]] && [[ $1 =~ / || $1 =~ ^\.. ]] ;then
   cd "$1"
  else
-	cd "$( listdirs | grep "$(echo $1 | sed 's/\/$//g' )" | sed -n "$([[ -n $2 ]] && echo $2 || echo 1 )"p ;)"
+  cd "$( listdirs | grep -i "$(echo $1 | sed 's/\/$//g' )" | sed -n "$([[ -n $2 ]] && echo $2 || echo 1 )"p ;)"
  fi
-# which colorls &> /dev/null  &&  colorls --sd || ls
-ls
+which colorls &> /dev/null  &&  colorls --sd || LS
+
