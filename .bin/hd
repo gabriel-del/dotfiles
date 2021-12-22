@@ -1,0 +1,37 @@
+#!/bin/bash
+#USAGE: hd [open|close] [hd|lvmhd] [a|b]
+
+partition="/dev/sd$([[ -n $3 ]] && echo $3 || echo a)8"
+hd="$([[ -n $2 ]] && echo $2 || echo hd)"
+
+case $1 in
+  o*)
+  [[ ! -b /dev/mapper/$hd ]] && sudo cryptsetup -v open $partition $hd --key-file /boot/.keep
+  while [ ! -b /dev/mapper/$hd ] ;do sleep 0.5 ;done
+  [[ ! -b /dev/mapper/$hd-media ]] &&  sudo vgchange -a y $hd
+  while [ ! -b /dev/mapper/$hd-media ] ;do sleep 0.5 ;done
+  [[ -b /dev/mapper/$hd-media ]]  && sudo mount -v /dev/mapper/$hd-media /mnt/$hd-media
+  [[ -b /dev/mapper/$hd-media ]]  && sudo mount -v /dev/mapper/$hd-home /mnt/$hd-home
+  ;;
+  c*)
+  [[ $(grep /dev/mapper/$hd-media /proc/mounts) ]] && sudo umount -v /mnt/$hd-media
+  [[ $(grep /dev/mapper/$hd-home /proc/mounts) ]] && sudo umount -v /mnt/$hd-home
+  while [ $(grep /dev/mapper/$hd /proc/mounts) ] ;do sleep 0.5 ;done
+  [[ -b /dev/mapper/$hd-media ]] && sudo vgchange -a n $hd
+  while [ -b /dev/mapper/$hd-media ] ;do sleep 0.5 ;done
+  [[ -b /dev/mapper/$hd ]] && sudo cryptsetup -v close $hd
+  ;;
+  d*)
+  sudo rm /boot/.keep
+  ;;
+  n*)
+  read -s -p "type: " password
+  sudo cat $password > /boot/.keep
+  ;;
+  *)
+  echo "Invalid Option"
+  ;;
+esac
+
+# echo $partition
+# echo $hd
