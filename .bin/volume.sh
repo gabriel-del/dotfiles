@@ -1,13 +1,17 @@
 #!/bin/bash
 # USAGE: ./volume.sh up/down/toggle
 step=2
+# program=amixer
 program=pactl
 theme=breeze-dark
 theme_path=/usr/share/icons/$theme/status/16
 
 case $program in
   pactl)
-     volume(){ pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(( $2 + 1  )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,';}
+     volume(){ pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(( $2 + 4  )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,';}
+     # volume(){ pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(( $2 + 1  ));}
+
+# echo "volume: $volume"
     case $1 in
       up) [[ $(volume) -lt 160 ]] && pactl set-sink-volume @DEFAULT_SINK@ +2% ;;
       down) pactl set-sink-volume @DEFAULT_SINK@ -2% ;;
@@ -49,7 +53,6 @@ elif [[ $theme == Adwaita ]] ; then
 	icon=audio-volume-muted-symbolic.symbolic.png
 	fi
 fi
-
 
 bar=$(seq -s "─" $(($(volume) / 5)) | sed 's/[0-9]//g')
 dunstify -t 2000 -i "$theme_path/$icon"  -r 2593 -u normal "$(volume)    $bar"

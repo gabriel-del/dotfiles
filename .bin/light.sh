@@ -13,7 +13,7 @@ case $program in
     esac ;;
 esac
 
-bar=$(seq -s "─" $(($(volume) / 5)) | sed 's/[0-9]//g')
+bar="$(seq -s "─" $(($(volume) / 5)) | sed 's/[0-9]//g')"
 dunstify -t 2000 -i "$theme/$icon"  -r 2593 -u normal "$(volume)    $bar"
 
 

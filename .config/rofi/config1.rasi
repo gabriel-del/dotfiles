@@ -1,41 +1,28 @@
+/*Dracula theme based on the Purple official rofi theme*/
+
 * {
-    /* Dracula theme colour palette */
-    drac-bgd: #282a36;
-    drac-cur: #44475a;
-    drac-fgd: #f8f8f2;
-    drac-cmt: #6272a4;
-    drac-cya: #8be9fd;
-    drac-grn: #50fa7b;
-    drac-ora: #ffb86c;
-    drac-pnk: #ff79c6;
-    drac-pur: #bd93f9;
-    drac-red: #ff5555;
-    drac-yel: #f1fa8c;
-
     font: "Jetbrains Mono 12";
-
-    foreground: @drac-fgd;
-    background: @drac-bgd;
-    active-background: @drac-cya;
-    urgent-background: @drac-red;
-    
+    foreground: #f8f8f2;
+    background: #282a36;
+    active-background: #6272a4;
+    urgent-background: #ff5555;
     selected-background: @active-background;
     selected-urgent-background: @urgent-background;
     selected-active-background: @active-background;
     separatorcolor: @active-background;
-    bordercolor: #6272a4;
+    bordercolor: @active-background;
 }
 
 #window {
     background-color: @background;
-    border:           3;
+    border:           1;
     border-radius: 6;
     border-color: @bordercolor;
     padding:          5;
 }
 #mainbox {
     border:  0;
-    padding: 5;
+    padding: 0;
 }
 #message {
     border:       1px dash 0px 0px ;
@@ -67,7 +54,7 @@
 }
 #element.normal.active {
     background-color: @active-background;
-    text-color:       @background;
+    text-color:       @foreground;
 }
 #element.selected.normal {
     background-color: @selected-background;
@@ -79,7 +66,7 @@
 }
 #element.selected.active {
     background-color: @selected-active-background;
-    text-color:       @background;
+    text-color:       @foreground;
 }
 #element.alternate.normal {
     background-color: @background;
@@ -118,11 +105,11 @@
 }
 #entry {
     spacing:    0;
-    text-color: @drac-cya;
+    text-color: @foreground;
 }
 #prompt {
     spacing:    0;
-    text-color: @drac-grn;
+    text-color: @foreground;
 }
 #inputbar {
     children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
@@ -131,5 +118,5 @@
     expand:     false;
     str:        ":";
     margin:     0px 0.3em 0em 0em ;
-    text-color: @drac-grn;
+    text-color: @foreground;
 }

@@ -16,7 +16,7 @@
 
     foreground: @drac-fgd;
     background: @drac-bgd;
-    active-background: @drac-cya;
+    active-background: @drac-pnk;
     urgent-background: @drac-red;
     
     selected-background: @active-background;
