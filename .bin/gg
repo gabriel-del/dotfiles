@@ -1,12 +1,12 @@
 #!/bin/bash
 shopt -s expand_aliases
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 if [[ "$PWD" == "$HOME" ]] ;then
   # -n to dry-run
-  config add -vu .
-  config commit -m "$([[ -z $@ ]] && echo $(date +%F=%T) || echo $@)"
-  config push
+  dotfiles  add -vu .
+  dotfiles commit -m "$([[ -z $@ ]] && echo $(date +%F=%T) || echo $@)"
+  dotfiles push
 else
   git add -v .
   git commit -m "$([[ -z $@ ]] && echo $(date +%F=%T) || echo $@)"
