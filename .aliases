@@ -54,7 +54,7 @@ if [[ $(id -u) -eq 0 ]] ;then
     alias "$i"="sudo -E -u sudo $i"
   done
 else
-  for i in mkinitcpio killall vgs vgchange cryptsetup ego epro cfdisk etc-update shutdown genkernel blkid ip df iw lscpu uname rc-update su cryptsetup pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo
+  for i in mkinitcpio killall vgs vgchange cryptsetup ego epro cfdisk etc-update shutdown genkernel blkid ip df iw lscpu uname rc-update su cryptsetup pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo pacman-key
     do
     alias "$i"="sudo -E $i"
   done
@@ -89,6 +89,7 @@ export EDITOR="nvim"
 export TERMINAL=kitty
 export BROWSER=brave
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+export XDG_RUNTIME_DIR=/run/user/$(id -u)
 #export manvim="/usr/share/vim/$(ls /usr/share/vim | grep [1-9])/doc"
 export manmutt="/usr/share/doc/mutt"
 export archwiki="/usr/share/doc/arch-wiki/"
@@ -113,6 +114,8 @@ alias shred="shred -zf"
 alias wget="wget -U 'noleak'"
 alias curl="curl --user-agent 'noleak'"
 alias ipinfo="curl ipinfo.io/ip"
+alias tree="tree --noreport -C"
+alias tail="tail --follow -n 30"
 
 
 #preguiças
@@ -129,8 +132,8 @@ alias ....='cd ../../.. && ls'
 alias funtoomount="mount /dev/mapper/lvm-funtoo /mnt/funtoo && cd /mnt/funtoo && mount -t proc none proc && mount --rbind /sys sys && mount --rbind /dev dev"
 alias funtoolog="cd /mnt/funtoo && sudo env -i HOME=/root TERM=$TERM chroot . bash -l"
 alias mountp="mount -w -o uid=$(id -u $USER),gid=$(id -g $USER)"
-alias bs='source ~/.bashrc && source ~/.bash_profile'
-alias ss='systemctl suspend -i'
+[[ -n $@ ]] && alias aliases="source ~/.config/fish/config.fish" || alias aliases="source ~/.bashrc"
+alias sys-suspend='systemctl suspend -i'
 # alias cdr='cd - &> /dev/null'
 #alias ss='set +x && set +x'
 alias tempo="curl http://wttr.in/$(basename "$(ls -l | grep localtime | cut -d'>' -f2-)")"
@@ -156,10 +159,10 @@ alias vw='VBoxManage controlvm windows'
 
 
 alias out="pkill -u $USER"
-alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 #alias ls='colorls --sd'
 
-alias listfiles="find . -maxdepth 1 -type f -not -path '*/\.*' | sort"
+alias listfiles="find . -maxdepth 1 -type f,l -not -path '*/\.*' | sort"
 alias listdirs="find . -mindepth 1 -maxdepth 1 -type d -not -path '*/\.*' | sort"
 alias out="pkill -u $USER"
 alias gs='git status'

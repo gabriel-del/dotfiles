@@ -1,0 +1,66 @@
+*
+!/.*/
+# .cache
+# $HOME folders
+!/.bin/**
+!/.st/**
+!/.system/**
+!/.vim/vimrc
+!/.vim/colors/**
+
+# $HOME files
+!/.Xdefaults
+!/.Xresources
+!/.aliases
+!/.bashrc
+!/.cinnamon.conf
+!/.gitconfig
+!/.i3status.conf
+!/.nanorc
+!/.tmux.conf
+!/.tmux.conf.local
+!/.xinitrc
+!/.xprofile
+!/.zshrc
+!/.gitignore
+!/README.md
+
+#config folders
+!/.config/**/
+!/.config/bspwm/**
+!/.config/conky/**
+!/.config/deepin/**/*.conf
+!/.config/feh/**
+!/.config/fish/**
+!/.config/gedit/**
+!/.config/git/**
+!/.config/gtk-3.0/*.ini
+!/.config/gtk-2.0/*.ini
+!/.config/htop/**
+!/.config/i3/**
+!/.config/kak/**
+!/.config/kitty/**
+!/.config/lf/**
+!/.config/lxpanel/**
+!/.config/lxqt/**
+!/.config/lxsession/**
+!/.config/lxterminal/**
+!/.config/mpv/**/*.conf
+!/.config/neofetch/**
+!/.config/nvim/**
+!/.config/openbox/**
+!/.config/pcmanfm-qt/**/*.conf
+!/.config/pcmanfm/**/*.conf
+!/.config/polybar/**
+!/.config/ranger/**
+!/.config/rofi/**
+!/.config/sxhkd/**
+!/.config/syncthing/config.xml
+!/.config/vlc/vlcrc
+!/.config/xfce4/**
+
+# .config files
+!/.config/user-dirs.dirs
+!/.config/user-dirs.locale
+!/.config/chrome-flags.conf
+!/.config/chromium-flags.conf

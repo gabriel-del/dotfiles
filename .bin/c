@@ -3,8 +3,13 @@ LS () { ls --color=always -C --group-directories-first -w $(tput cols) ;}
 listdirs () { find . -mindepth 1 -maxdepth 1 -type d -not -path '*/\.*' | sort ;}
 if [[ $# -eq 1 ]] && [[ $1 =~ / || $1 =~ ^\.. ]] ;then
   cd "$1"
- else
-  cd "$( listdirs | grep -i "$(echo $1 | sed 's/\/$//g' )" | sed -n "$([[ -n $2 ]] && echo $2 || echo 1 )"p ;)"
- fi
-which colorls &> /dev/null  &&  colorls --sd || LS
+else
+  dir="$( listdirs | grep -i "$(echo $1 | sed 's/\/$//g' )" | sed -n "$([[ -n $2 ]] && echo $2 || echo 1 )"p ;)"
+  if [ -z "$dir" ] ;then
+    echo "Directory '$1' not fount"
+  else
+    cd "$dir"
+    which colorls &> /dev/null  &&  colorls --sd || LS
+  fi
+fi
 

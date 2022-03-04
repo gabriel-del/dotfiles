@@ -3,3 +3,5 @@
 	name = Gabriel Del
 [credential]
 	helper = store
+[init]
+	defaultBranch = main

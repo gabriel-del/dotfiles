@@ -9,7 +9,11 @@ if [[ $# -eq 1 ]] && [[ $1 =~ / || $1 =~ ^\.. ]] ;then
   if [ -z "$file" ]; then
     echo "File '$1' not fount"
   else
-    sudo -E $EDITOR "$file"
+    echo "$(pwd)/$(basename $file)"
+    echo -n "$(pwd)/$(basename $file)" | xsel -i -b
+    # $HOME/.bin/mktouch "$HOME/.system/arch/$(pwd)/$(basename $file)"
   fi
 fi
+
+
 

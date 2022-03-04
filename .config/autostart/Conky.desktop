@@ -1,7 +1,0 @@
-[Desktop Entry]
-Exec=~/.config/conky/conky.sh
-Hidden=true
-Name=Conky
-OnlyShowIn=LXQt;
-Type=Application
-Version=1.0
