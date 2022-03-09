@@ -1,0 +1,14 @@
+#!/bin/bash
+
+case $1 in
+  on)
+    /usr/bin/xscreensaver -no-splash &
+    [[ -f /boot/.keep ]] && sudo rm -v /boot/.keep
+  ;;
+
+  off)
+    /usr/bin/xscreensaver-command --exit
+    [[ -f $HOME/.ssh/id_ed25519 ]] && sudo cp -v $HOME/.ssh/id_ed25519 /boot/.keep
+  ;;
+esac
+

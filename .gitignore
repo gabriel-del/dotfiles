@@ -5,7 +5,7 @@
 # $HOME folders
 !/.bin/**
 !/.st/**
-!/.system/**
+!/.system/**/*
 !/.vim/vimrc
 !/.vim/colors/**
 

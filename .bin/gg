@@ -4,7 +4,8 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 if [[ "$PWD" == "$HOME" ]] ;then
   # -n to dry-run
-  dotfiles  add -vu .
+  # dotfiles  add -vu .
+  dotfiles  add -v .
   dotfiles commit -m "$([[ -z $@ ]] && echo $(date +%F=%T) || echo $@)"
   dotfiles push
 else
