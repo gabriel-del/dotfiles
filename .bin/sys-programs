@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+
+OS=$(cat /etc/os-release | grep ^ID | cut -d= -f2-)
+case $OS in
+  arch)
+  sudo pacman -Qqet > "$HOME/PublicShare/log/pacman.log"
+  sudo pacman -Qqetm > "$HOME/PublicShare/log/yay.log"
+  ;;
+esac
