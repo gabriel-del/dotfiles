@@ -2,7 +2,7 @@
 #
 # LXDM wrapper to run around X sessions.
 
-exec 1>~/PublicShare/log/xinit.log 2>&1
+exec 1>$HOME/PublicShare/log/xinit.log 2>&1
 
 echo "Running X session wrapper"
 
@@ -80,6 +80,6 @@ case $SESSION in
   # Nenhuma sessao conhecida, tenta como comando
 esac
 
-exec  $SESSION &> ~/PublicShare/log/session.log 2>&1
+exec  $SESSION &> $HOME/PublicShare/log/session.log 2>&1
 
 echo "X session wrapper complete, running session $LXSESSION"

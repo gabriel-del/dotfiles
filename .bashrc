@@ -1,3 +1,4 @@
+# if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then exec startx ;fi
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] &&  /bin/startx
 [[ $(ps --no-header --pid=$PPID --format=cmd) != "fish" ]] && exec fish
 

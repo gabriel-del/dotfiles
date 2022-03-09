@@ -1,6 +1,7 @@
 *
 !/.*/
-# .cache
+.cache
+
 # $HOME folders
 !/.bin/**
 !/.st/**

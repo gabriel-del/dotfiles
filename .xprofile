@@ -9,7 +9,8 @@ fi
 
 # wallpaper
 exec feh --bg-scale ~/Pictures/wallpappers/my/pinguim.png &
-which picom && picom -b
+# which picom && picom -b
+which picom && picom --vsync -r 12 --no-fading-openclose -b
 which conky && ~/.config/conky/conky.sh &
 # which syncthing && /usr/bin/syncthing --no-browser --logfile=$HOME/.cache/syncthing.log -no-restart -logflags=3 &
 # [[ $(cat /proc/swaps | wc -l) -eq 1 ]] && sudo swapon /home/.swap
