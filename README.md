@@ -27,29 +27,28 @@ it allow to have [Aliases](https://wiki.archlinux.org/title/Bash#Aliases)
 in sync with [Bash](https://wiki.archlinux.org/title/Bash)
 
 On *.aliases* and *.bin* there is configs as:
+* **i** and **ii**: Allow to install anything automatically.
+Shortcut to **pacman -S --noconfirm** 
+* **c**: Enter any folder with just part of the name.
+For example, just type:
+```bash
+c sys
+```
+instead of
+```bash
+cd 'System Volume Information'
+```
+* **e**: Same as **c** but to files. 
+Also allow edit any file using root permition, but keeping user configs
+using **sudo -E $EDITOR**
+* **mountp**: Mount vfat filesystems with user permissions
+* **...**: Shortcut to **cd ../.. && ls**
+* Auto-sudo  without need to type sudo, neither password
+* **hd o**: Open and mount encrypted HardDrive easily
+* **$PATH** setted statically, and on sync between **bash** and **fish**
+* **aliases**: Update the configs on **bash** and **fish**
 
-
-update configs typing *aliases*
-Which includ my path setted statically on both
-Auto sudo, without even need type sudo, neither password
-i <package> to install any package
-c <part of folder name> to enter any folder
-ex: c Sys instead of cd 'System Volume Information'
-e <part of file name> allow me to modify any file, with root permition, but user configs
-ex: e pac -> sudo -E nvim pacman.conf
-mountp to mount vfat filesystems with user permission
-
-shortcuts as:
-...='cd ../.. && ls'
-
-backup all important system files using sys-backup-system
-sync easily with git, have a perfet .gitignore
-save list of instaled files with sys-programs, to use on next formatation
-kitty,mpv, conky totally configured 
-
-'hd o' allow to open and mount encrypted HardDrive easily
-
-# System
+### System
 All this files are inside *.system*
 [CryptSetup](https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system)
 to encrypt the HardDrive
@@ -59,7 +58,7 @@ to allow dinamically manage the partitions
 The **cryptsetup** is open automatically by kernel, and can be disabled at anytime just by typing
 ```bash
 sys-lock on
-``
+```
 Wich also enable the screen locker 
 [XscreeSaver](https://wiki.archlinux.org/title/XScreenSaver)
 , for exemple on vations and trips
@@ -75,6 +74,23 @@ to sync with [google-drive](http://drive.google.com/) automatily
 and [Syncthing](https://wiki.archlinux.org/title/Syncthing)
 to sync whith smartphone.
 
+
+### How to Use
+First, fork the project on github.
+
+While instaling when the **/home** folder is empty. 
+(Or backup the files and force)
+
+```bash
+git clone --bare $REPO $HOME/.dotfiles
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+config config --local status.showUntrackedFiles no
+config checkout
+```
+
+* **sys-backup-system**: backup the importante system files, take a look at it.
+* **sys-programs**: Save a list of installed programs, to not forget after formatting
+* **.gitignore**: This file is perfectly configured, modify accordinly to your files.
 
 
 
