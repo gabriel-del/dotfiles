@@ -6,4 +6,3 @@ if test -f /usr/share/fish/vendor_functions.d/fisher.fish
 end
 
 [ -f /opt/asdf-vm/asdf.fish ] && source /opt/asdf-vm/asdf.fish
-

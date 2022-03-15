@@ -43,6 +43,8 @@ $HOME/.yarn/bin
 $HOME/.config/yarn/global/node_modules/.bin
 $HOME/.local/bin
 $HOME/.rvm/bin
+$HOME/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/mailcatcher-0.7.1/bin
+$HOME/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/thin-1.5.1/lib
 "
 
 export path="$(/bin/echo "$path" | /bin/sed 's/#.*$//' | /bin/sed '/^$/d' | /bin/sed 's/ //g' | /bin/tr '\n' ':')"
@@ -114,7 +116,8 @@ alias shred="shred -zf"
 alias wget="wget -U 'noleak'"
 alias curl="curl --user-agent 'noleak'"
 alias ipinfo="curl ipinfo.io/ip"
-alias tree="tree --noreport -C"
+# alias tree="tree --noreport -C"
+alias tree="tree -C"
 alias tail="tail --follow -n 30"
 
 
