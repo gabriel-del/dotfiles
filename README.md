@@ -26,7 +26,7 @@ is the best combination,
 it allow to have [Aliases](https://wiki.archlinux.org/title/Bash#Aliases)
 in sync with [Bash](https://wiki.archlinux.org/title/Bash)
 
-On *.aliases* and *.bin* there is configs as:
+On **.aliases** and **.bin** there is configs as:
 * **i** and **ii**: Allow to install anything automatically.
 Shortcut to **pacman -S --noconfirm** 
 * **c**: Enter any folder with just part of the name.
@@ -39,8 +39,8 @@ instead of
 cd 'System Volume Information'
 ```
 * **e**: Same as **c** but to files. 
-Also allow edit any file using root permition, but keeping user configs
-using **sudo -E $EDITOR**
+Also allow edit any file using root permition, but keeping user configs.
+It uses **sudo -E $EDITOR**
 * **mountp**: Mount vfat filesystems with user permissions
 * **...**: Shortcut to **cd ../.. && ls**
 * Auto-sudo  without need to type sudo, neither password
@@ -78,8 +78,9 @@ to sync whith smartphone.
 ### How to Use
 First, fork the project on github.
 
-While instaling when the **/home** folder is empty. 
+While instaling, when the **/home** folder is empty 
 (Or backup the files and force)
+, run:
 
 ```bash
 git clone --bare $REPO $HOME/.dotfiles
@@ -88,8 +89,8 @@ config config --local status.showUntrackedFiles no
 config checkout
 ```
 
-* **sys-backup-system**: backup the importante system files, take a look at it.
-* **sys-programs**: Save a list of installed programs, to not forget after formatting
+* **sys-backup-system**: backup the importants system files, take a look at it.
+* **sys-programs**: Save a list of installed programs, to not forget after formatting.
 * **.gitignore**: This file is perfectly configured, modify accordinly to your files.
 
 
