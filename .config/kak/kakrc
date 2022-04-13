@@ -19,6 +19,15 @@ add-highlighter global/ show-matching
 add-highlighter global/ dynregex '%reg{/}' 0:+u
 
 hook global WinCreate ^[^*]+$ %{ add-highlighter window/ number-lines -hlcursor }
+# hook global WinCreate ^[^*]+\.md$ %{ add-highlighter window/ number-lines -hlcursor }
+
+
+hook global BufCreate /.* %{
+	hook buffer NormalIdle .* %{ try %{ eval %sh{ [ "$kak_modified" = false ] && printf 'fail' } ; write } }
+  hook buffer InsertIdle .* %{ try %{ eval %sh{ [ "$kak_modified" = false ] && printf 'fail' } ; write } }
+}
+
+
 
 # Enable editor config
 # ────────────────────
@@ -166,7 +175,7 @@ map global normal Y '<a-l>y' -docstring 'yank to end of line'
 
 set-option global tabstop 2
 set-option global indentwidth 2
-addhl global/ wrap
+# addhl global/ wrap
 
 #Copy-paste
 hook global RegisterModified '"' %{ nop %sh{

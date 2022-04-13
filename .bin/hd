@@ -3,6 +3,7 @@
 
 partition="/dev/sd$([[ -n $3 ]] && echo $3 || echo a)8"
 hd="$([[ -n $2 ]] && echo $2 || echo hd)"
+mnt="$HOME/PublicShare/mnt"
 
 case $1 in
   o*)
@@ -10,12 +11,12 @@ case $1 in
   while [ ! -b /dev/mapper/$hd ] ;do sleep 0.5 ;done
   [[ ! -b /dev/mapper/$hd-media ]] &&  sudo vgchange -a y $hd
   while [ ! -b /dev/mapper/$hd-media ] ;do sleep 0.5 ;done
-  [[ -b /dev/mapper/$hd-media ]]  && sudo mount -v /dev/mapper/$hd-media /mnt/$hd-media
-  [[ -b /dev/mapper/$hd-media ]]  && sudo mount -v /dev/mapper/$hd-home /mnt/$hd-home
+  [[ -b /dev/mapper/$hd-media ]]  && sudo mount -v /dev/mapper/$hd-media $mnt/$hd-media
+  [[ -b /dev/mapper/$hd-media ]]  && sudo mount -v /dev/mapper/$hd-home $mnt/$hd-home
   ;;
   c*)
-  [[ $(grep /dev/mapper/$hd-media /proc/mounts) ]] && sudo umount -v /mnt/$hd-media
-  [[ $(grep /dev/mapper/$hd-home /proc/mounts) ]] && sudo umount -v /mnt/$hd-home
+  [[ $(grep /dev/mapper/$hd-media /proc/mounts) ]] && sudo umount -v $mnt/$hd-media
+  [[ $(grep /dev/mapper/$hd-home /proc/mounts) ]] && sudo umount -v $mnt/$hd-home
   while [ $(grep /dev/mapper/$hd /proc/mounts) ] ;do sleep 0.5 ;done
   [[ -b /dev/mapper/$hd-media ]] && sudo vgchange -a n $hd
   while [ -b /dev/mapper/$hd-media ] ;do sleep 0.5 ;done
