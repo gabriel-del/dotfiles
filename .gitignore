@@ -39,7 +39,9 @@
 !/.config/gtk-2.0/*.ini
 !/.config/htop/**
 !/.config/i3/**
-!/.config/kak/**
+!/.config/kak/**/
+!/.config/kak/colors/**
+!/.config/kak/kak.rc
 !/.config/kitty/**
 !/.config/lf/**
 !/.config/lxpanel/**
