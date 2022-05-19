@@ -33,12 +33,13 @@ export path="
 /opt/blender
 /home/linuxbrew/.linuxbrew/bin
 /usr/lib/emscripten
+$HOME/.gem/ruby/2.1.0/bin
 $HOME/.gem/ruby/2.4.0/bin
 $HOME/.gem/ruby/2.6.0/bin
+$HOME/.gem/ruby/3.0.0/bin
 $HOME/.bin
 $HOME/.scripts
 $HOME/.go/bin
-$HOME/.gem/ruby/2.1.0
 $HOME/.yarn/bin
 $HOME/.config/yarn/global/node_modules/.bin
 $HOME/.local/bin
@@ -47,7 +48,7 @@ $HOME/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/mailcatcher-0.7.1/bin
 $HOME/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/thin-1.5.1/lib
 $HOME/.cargo/bin
 "
-
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export path="$(/bin/echo "$path" | /bin/sed 's/#.*$//' | /bin/sed '/^$/d' | /bin/sed 's/ //g' | /bin/tr '\n' ':')"
 
 # SUDO
@@ -57,7 +58,7 @@ if [[ $(id -u) -eq 0 ]] ;then
     alias "$i"="sudo -E -u sudo $i"
   done
 else
-  for i in mkinitcpio usermod  gpasswd  groupdel useradd killall vgs vgchange cryptsetup ego epro cfdisk etc-update shutdown genkernel blkid ip df iw lscpu uname rc-update su cryptsetup pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo pacman-key
+  for i in mkinitcpio usermod lvs lvresize lvremove resize2fs  gpasswd  groupdel useradd killall vgs vgchange cryptsetup ego epro cfdisk etc-update shutdown genkernel blkid ip df iw lscpu uname rc-update su cryptsetup pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo pacman-key
     do
     alias "$i"="sudo -E $i"
   done
@@ -82,7 +83,7 @@ nc="$(tput sgr0)"
 export PS1="\[$blue\][ \[$cyan\]\H \[$darkgrey\]\w\[$darkgrey\] \[$blue\]]\\[$darkgrey\]# \[$nc\]"
 export LD_PRELOAD=""
 
-
+. /opt/asdf-vm/asdf.sh
 export GOPATH="$HOME/.go"
 export WEKA_HOME="$HOME/.wekafiles"
 export ANDROID_HOME=/opt/android-sdk

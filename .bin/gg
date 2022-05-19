@@ -11,5 +11,6 @@ if [[ "$PWD" == "$HOME" ]] ;then
 else
   git add -v .
   git commit -m "$([[ -z $@ ]] && echo $(date +%F=%T) || echo $@)"
-  git push -u origin main
+  # git push -u origin main
+  git push
 fi
