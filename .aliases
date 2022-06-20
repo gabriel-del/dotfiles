@@ -113,7 +113,7 @@ alias egrep='egrep --color=auto'
 alias df='df -h'
 alias cp='cp -vr'
 alias bd=". bd -si"
-alias rm='rm -rv'
+alias rm='rm -rfv'
 alias shred="shred -zf"
 alias wget="wget -U 'noleak'"
 alias curl="curl --user-agent 'noleak'"

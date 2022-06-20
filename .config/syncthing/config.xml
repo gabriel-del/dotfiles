@@ -1,5 +1,5 @@
 <configuration version="36">
-    <folder id="ti2t7-ht3ak" label="cel-sd" path="/home/toor/Pictures/cel-sd" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+    <folder id="9q8kc-apup0" label="cel-int" path="/home/toor/Music/cel-int" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
         <device id="RN7KHO2-UTTRH3I-2FMZNME-WKU4RZ4-REVLINX-IA2E6YF-CKWAWUP-3LFCEAQ" introducedBy="">
             <encryptionPassword></encryptionPassword>
@@ -36,7 +36,7 @@
         <caseSensitiveFS>false</caseSensitiveFS>
         <junctionsAsDirs>false</junctionsAsDirs>
     </folder>
-    <folder id="uqp0o-fbz0j" label="cel-int" path="/home/toor/Pictures/cel-int" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+    <folder id="hw7sg-gkkuc" label="cel-sd" path="/home/toor/Music/cel-sd" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
         <device id="RN7KHO2-UTTRH3I-2FMZNME-WKU4RZ4-REVLINX-IA2E6YF-CKWAWUP-3LFCEAQ" introducedBy="">
             <encryptionPassword></encryptionPassword>
@@ -89,6 +89,7 @@
         <autoAcceptFolders>false</autoAcceptFolders>
         <maxSendKbps>0</maxSendKbps>
         <maxRecvKbps>0</maxRecvKbps>
+        <ignoredFolder time="2022-06-18T21:43:08.094Z" id="ti2t7-ht3ak" label="cel-sd"></ignoredFolder>
         <maxRequestKiB>0</maxRequestKiB>
         <untrusted>false</untrusted>
         <remoteGUIPort>0</remoteGUIPort>
