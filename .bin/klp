@@ -5,3 +5,5 @@
 for i in $(lsof -i :$port -Fp | sed 's/^p//') ;do
   kill -9 $i
 done
+
+#kill -9 $(lsof -ti:3000,3001)

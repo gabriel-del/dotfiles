@@ -15,9 +15,10 @@
 # If you want to use XFCE config tools...
 #
 #xfce-mcs-manager &
-brave &
+brave-beta &
 kitty &
 code-oss &
 thunar &
-anki &
+# anki &
 discord &
+copyq &

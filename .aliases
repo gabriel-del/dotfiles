@@ -58,7 +58,7 @@ if [[ $(id -u) -eq 0 ]] ;then
     alias "$i"="sudo -E -u sudo $i"
   done
 else
-  for i in mkinitcpio modprobe usermod lvs lvresize lvremove resize2fs  gpasswd  groupdel useradd killall vgs vgchange cryptsetup ego epro cfdisk etc-update shutdown genkernel blkid ip df iw lscpu uname rc-update su cryptsetup pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo pacman-key
+  for i in mkinitcpio locale-gen modprobe usermod lvs lvresize lvremove resize2fs  gpasswd  groupdel useradd killall vgs vgchange cryptsetup ego epro cfdisk etc-update shutdown genkernel blkid ip df iw lscpu uname rc-update su cryptsetup pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo pacman-key
     do
     alias "$i"="sudo -E $i"
   done
@@ -83,13 +83,13 @@ nc="$(tput sgr0)"
 export PS1="\[$blue\][ \[$cyan\]\H \[$darkgrey\]\w\[$darkgrey\] \[$blue\]]\\[$darkgrey\]# \[$nc\]"
 export LD_PRELOAD=""
 
-. /opt/asdf-vm/asdf.sh
+[[ -d /opt/asdf-vm ]] && . /opt/asdf-vm/asdf.sh
 export GOPATH="$HOME/.go"
 export WEKA_HOME="$HOME/.wekafiles"
 export ANDROID_HOME=/opt/android-sdk
 
 #Manuais
-export EDITOR="kak"
+export EDITOR="nvim"
 export TERMINAL=kitty
 export BROWSER=brave
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
@@ -121,6 +121,7 @@ alias ipinfo="curl ipinfo.io/ip"
 # alias tree="tree --noreport -C"
 alias tree="tree -C"
 alias tail="tail --follow -n 30"
+alias g="git"
 
 
 #preguiças

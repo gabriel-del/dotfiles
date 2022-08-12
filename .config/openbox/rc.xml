@@ -412,9 +412,14 @@
       </action>
     </keybind>
     <!-- Keybindings for running applications -->
-    <keybind key="W-e">
+    <keybind key="W-f">
       <action name="Execute">
         <command>thunar</command>
+      </action>
+    </keybind>
+    <keybind key="W-b">
+      <action name="Execute">
+        <command>brave-beta</command>
       </action>
     </keybind>
     <keybind key="W-space">
@@ -874,15 +879,31 @@
       <maximized>false</maximized>
       <layer>below</layer>
     </application>
-    <application name="brave"><desktop>1</desktop></application>
-    <application name="kitty"><desktop>2</desktop></application>
-    <application name="code-oss"><desktop>3</desktop></application>
-    <application name="Thunar"><desktop>4</desktop></application>
-    <application name="gedit"><desktop>5</desktop></application>
-    <application name="Anki"><desktop>9</desktop></application>
-    <application name="discord"><desktop>11</desktop></application>
-
+    <application name="brave-browser">
+      <desktop>1</desktop>
+    </application>
+    <application name="brave-browser-beta">
+      <desktop>1</desktop>
+    </application>
+    <application name="kitty">
+      <desktop>2</desktop>
+    </application>
+    <application name="code-oss">
+      <desktop>3</desktop>
+    </application>
+    <application name="thunar">
+      <desktop>4</desktop>
+    </application>
+    <!--
+    <application name="gedit">
+      <desktop>5</desktop>
+    </application>
+    -->
+    <application name="anki">
+      <desktop>9</desktop>
+    </application>
+    <application name="discord">
+      <desktop>11</desktop>
+    </application>
   </applications>
-
-
 </openbox_config>
