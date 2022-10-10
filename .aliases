@@ -47,6 +47,7 @@ $HOME/.rvm/bin
 $HOME/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/mailcatcher-0.7.1/bin
 $HOME/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/thin-1.5.1/lib
 $HOME/.cargo/bin
+/run/user/1000/fnm_multishells/683430_1661186430270/bin
 "
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export path="$(/bin/echo "$path" | /bin/sed 's/#.*$//' | /bin/sed '/^$/d' | /bin/sed 's/ //g' | /bin/tr '\n' ':')"
@@ -58,7 +59,7 @@ if [[ $(id -u) -eq 0 ]] ;then
     alias "$i"="sudo -E -u sudo $i"
   done
 else
-  for i in mkinitcpio locale-gen modprobe usermod lvs lvresize lvremove resize2fs  gpasswd  groupdel useradd killall vgs vgchange cryptsetup ego epro cfdisk etc-update shutdown genkernel blkid ip df iw lscpu uname rc-update su cryptsetup pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo pacman-key
+  for i in mkinitcpio docker locale-gen modprobe usermod lvs lvresize lvremove resize2fs  gpasswd  groupdel useradd killall vgs vgchange cryptsetup ego epro cfdisk etc-update shutdown genkernel blkid ip df iw lscpu uname rc-update su cryptsetup pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo pacman-key
     do
     alias "$i"="sudo -E $i"
   done
@@ -89,7 +90,7 @@ export WEKA_HOME="$HOME/.wekafiles"
 export ANDROID_HOME=/opt/android-sdk
 
 #Manuais
-export EDITOR="nvim"
+export EDITOR="helix"
 export TERMINAL=kitty
 export BROWSER=brave
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
@@ -180,3 +181,9 @@ alias cinnamonrestore="dconf load /org/cinnamon/ < $HOME/.cinnamon.config"
 alias list-packages='pacman -Qet | awk "{print $1}"'
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" #Da erro no fish
 
+export FNM_MULTISHELL_PATH="/run/user/1000/fnm_multishells/683988_1661186569613"
+export FNM_VERSION_FILE_STRATEGY="local"
+export FNM_DIR="/home/toor/.local/share/fnm"
+export FNM_LOGLEVEL="info"
+export FNM_NODE_DIST_MIRROR="https://nodejs.org/dist"
+export FNM_ARCH="x64"

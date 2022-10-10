@@ -1,0 +1,46 @@
+
+
+# [[language]]
+# name = "kind2"
+# scope = "source.js"
+# injection-regex = "^kind2$"
+# file-types = ["kind2"]
+# comment-token = "//"
+# indent = { tab-width = 2, unit = "  " }
+# language-server = { command = "typescript-language-server", args = ["--stdio", "--tsserver-log-verbosity=off"] }
+# formatter = { command = "typescript-language-server" , args = ["--stdin"] }
+# roots = []
+
+
+# [[language]]
+# name = "kind2"
+# scope = "source.kind2"
+# injection-regex = "kind2"
+# file-types = ["kind2"]
+# roots = []
+# comment-token = ";"
+# indent = { tab-width = 2, unit = "  " }
+
+# [[grammar]]
+# name = "kind2"
+# source = { git = "https://github.com/vito/tree-sitter-bass", rev = "dd439406bcb4b24dc13968e87f1860c696cbfcb7" }
+
+# [[language]]
+# name = "kind2"
+# scope = "source.kind2"
+# injection-regex = "^kind2$"
+# file-types = ["kind2"]
+# comment-token = "//"
+# indent = { tab-width = 2, unit = "  " }
+# language-server = { command = "solc", args = ["" ]}
+# # formatter = { command = "typescrip-language-server" , args = ["--stdin"] }
+# roots = []
+
+# [[language]]
+# name = "kind2"
+# scope = "scope.kind2"
+# injection-regex = "kind2"
+# file-types = ["kind2"]
+# roots = []
+# indent = { tab-width = 2, unit = "  " }
+# grammar = "html"

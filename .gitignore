@@ -61,6 +61,7 @@
 !/.config/vlc/vlcrc
 !/.config/xfce4/**
 !/.config/discord/settings.json
+!/.config/helix/**
 
 # .config files
 !/.config/user-dirs.dirs

@@ -1,2 +1,2 @@
 #!/bin/bash
-pv "$(pwd)/$1" | sudo dd of=/dev/sdb 
+pv "$(pwd)/$1" | sudo dd of=/dev/sda 

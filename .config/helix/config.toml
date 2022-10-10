@@ -1,0 +1,34 @@
+theme = "base16_transparent"
+# theme = "my.toml"
+
+[editor]
+line-number = "absolute"
+mouse = true
+cursorline = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+character = "╎"
+
+[keys.insert]
+j = { j = "normal_mode" }
+
+[editor.statusline]
+left = ["mode", "position-percentage", "position", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+
+[editor.whitespace.render]
+space = "none"
+tab = "all"
+newline = "none"
+
