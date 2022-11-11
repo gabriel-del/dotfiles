@@ -5,6 +5,8 @@ theme = "base16_transparent"
 line-number = "absolute"
 mouse = true
 cursorline = true
+auto-save = true
+auto-pairs = false
 
 [editor.cursor-shape]
 insert = "bar"

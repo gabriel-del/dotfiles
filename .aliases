@@ -59,7 +59,7 @@ if [[ $(id -u) -eq 0 ]] ;then
     alias "$i"="sudo -E -u sudo $i"
   done
 else
-  for i in mkinitcpio docker locale-gen modprobe usermod lvs lvresize lvremove resize2fs  gpasswd  groupdel useradd killall vgs vgchange cryptsetup ego epro cfdisk etc-update shutdown genkernel blkid ip df iw lscpu uname rc-update su cryptsetup pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo pacman-key
+  for i in libinput powerpill mkinitcpio docker locale-gen modprobe usermod lvs lvresize lvremove resize2fs  gpasswd  groupdel useradd killall vgs vgchange cryptsetup ego epro cfdisk etc-update shutdown genkernel blkid ip df iw lscpu uname rc-update su cryptsetup pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo pacman-key
     do
     alias "$i"="sudo -E $i"
   done
@@ -68,8 +68,8 @@ else
 # Install
 OS=$(cat /etc/os-release | grep ^ID | cut -d= -f2-)
 case $OS in
-    artix|arch) 	alias i="pacman -S --noconfirm"
-                   	alias ii="yay -S --noconfirm" ;;
+    artix|arch) 	alias i="pacman -S --noconfirm --overwrite \* --disable-download-timeout"
+                   	alias ii="paru -S" ;;
     funtoo)	alias i="emerge --autounmask --autounmask-write -v" ;;
     *) echo "$HOME/.aliases: Distribution not recognized" ;;
 esac
@@ -90,7 +90,7 @@ export WEKA_HOME="$HOME/.wekafiles"
 export ANDROID_HOME=/opt/android-sdk
 
 #Manuais
-export EDITOR="helix"
+export EDITOR="hx"
 export TERMINAL=kitty
 export BROWSER=brave
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
@@ -137,9 +137,9 @@ alias ....='cd ../../.. && ls'
 
 #atalhos
 alias funtoomount="mount /dev/mapper/lvm-funtoo /mnt/funtoo && cd /mnt/funtoo && mount -t proc none proc && mount --rbind /sys sys && mount --rbind /dev dev"
-alias funtoolog="cd /mnt/funtoo && sudo env -i HOME=/root TERM=$TERM chroot . bash -l"
+alias funtoolog="cd /mnt/funtoo && sudo env -i HOME=/root TERM=\$TERM chroot . bash -l"
 alias mountp="mount -w -o uid=$(id -u $USER),gid=$(id -g $USER)"
-[[ -n $@ ]] && alias aliases="source ~/.config/fish/config.fish" || alias aliases="source ~/.bashrc"
+[[ -n $* ]] && alias aliases="source ~/.config/fish/config.fish" || alias aliases="source ~/.bashrc"
 alias sys-suspend='systemctl suspend -i'
 # alias cdr='cd - &> /dev/null'
 #alias ss='set +x && set +x'
@@ -175,10 +175,10 @@ alias out="pkill -u $USER"
 alias gs='git status'
 #alias c="$@ source c"
 alias c="$@ source $HOME/.bin/c"
-#alias ranger='ranger --choosedir=$HOME/.rangerdir;cd "$(cat $HOME/.rangerdir)"'
+#alias ranger="ranger --choosedir=$HOME/.rangerdir;cd "$(cat $HOME/.rangerdir)""
 alias cinnamonbackup="dconf dump /org/cinnamon/ > $HOME/.cinnamon.config"
 alias cinnamonrestore="dconf load /org/cinnamon/ < $HOME/.cinnamon.config"
-alias list-packages='pacman -Qet | awk "{print $1}"'
+alias list-packages="pacman -Qet | awk {print $1}"
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" #Da erro no fish
 
 export FNM_MULTISHELL_PATH="/run/user/1000/fnm_multishells/683988_1661186569613"
