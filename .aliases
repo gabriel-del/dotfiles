@@ -59,7 +59,7 @@ if [[ $(id -u) -eq 0 ]] ;then
     alias "$i"="sudo -E -u sudo $i"
   done
 else
-  for i in libinput powerpill mkinitcpio docker locale-gen modprobe usermod lvs lvresize lvremove resize2fs  gpasswd  groupdel useradd killall vgs vgchange cryptsetup ego epro cfdisk etc-update shutdown genkernel blkid ip df iw lscpu uname rc-update su cryptsetup pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo pacman-key
+  for i in btrfs libinput powerpill mkfs.btrfs  mkinitcpio docker locale-gen modprobe usermod lvs lvresize lvremove resize2fs  gpasswd  groupdel useradd killall vgs vgchange cryptsetup ego epro cfdisk etc-update shutdown genkernel blkid ip df iw lscpu uname rc-update su cryptsetup pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo pacman-key
     do
     alias "$i"="sudo -E $i"
   done
@@ -69,7 +69,10 @@ else
 OS=$(cat /etc/os-release | grep ^ID | cut -d= -f2-)
 case $OS in
     artix|arch) 	alias i="pacman -S --noconfirm --overwrite \* --disable-download-timeout"
-                   	alias ii="paru -S" ;;
+                  alias ir="pacman -Rsu --noconfirm"
+                  alias iu="pacman -Sy && powerpill -Su && paru -Su"
+                   	# alias ii="paru -S" ;;
+                   	alias ii="yay -S --noconfirm" ;;
     funtoo)	alias i="emerge --autounmask --autounmask-write -v" ;;
     *) echo "$HOME/.aliases: Distribution not recognized" ;;
 esac

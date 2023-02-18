@@ -1,0 +1,4 @@
+#!/bin/bash
+
+url="http://localhost:3000/api"
+curl -s "${@: 2}" "$url/$1" | jq .
