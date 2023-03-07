@@ -1,0 +1,13 @@
+[DLL09D9:00 04F3:3147 Touchpad]
+naturalScroll=false
+
+[HTX USB HID Device HTX HID Device Touchpad]
+disableWhileTyping=false
+enabled=false
+tapDragLock=true
+
+[SynPS/2 Synaptics TouchPad]
+tapToClick=true
+
+[Synaptics tm2964-001]
+tapToClick=true
