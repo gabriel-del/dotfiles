@@ -1,0 +1,7 @@
+{
+    "window.zoomLevel": 2,
+    "workbench.colorTheme": "JellyFish",
+    "files.autoSave": "afterDelay",
+    "editor.tabSize": 2,
+    "editor.cursorStyle": "underline"
+}

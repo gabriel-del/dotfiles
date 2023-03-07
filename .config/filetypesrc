@@ -1,0 +1,4 @@
+[EmbedSettings]
+embed-application/json=false
+embed-application/xml=false
+embed-text/markdown=false
