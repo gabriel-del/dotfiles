@@ -2,52 +2,20 @@
 #[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx
 #[[ -n $DISPLAY && $XDG_VTNR -eq 1 && $TERM =~ (xterm|st) ]] && tmux
 
+
 export path="
-/bin
-#comment test
-/sbin
-/usr/bin
-/usr/sbin
-/usr/local/bin
 /usr/local/sbin
+/usr/local/bin
+/usr/bin
+/usr/lib/jvm/default/bin
 /usr/bin/site_perl
 /usr/bin/vendor_perl
 /usr/bin/core_perl
-/usr/games
-/usr/games/bin
-/usr/lib64/kde4/libexec
-/usr/lib64/qt/bin
-/usr/lib64/ruby/gems/2.1.0
-/usr/lib64/ruby/gems/2.1.0/gems/jekyll-3.7.3/exe
-/usr/lib64/ruby/gems/2.1.0/gems/bundler-1.16.1/exe
-/usr/lib64/python2.7/site-packages
-/usr/lib64
-/usr/share/texmf/bin
-/usr/share/spectrwm/
-/src/sbin
-/opt/bin
-/opt/andoid-sdk/tools
-/opt/andoid-sdk/platform-tools
-/opt/andoird-sdk/tools
-/opt/andoird-sdk/platform-tools
-/opt/blender
-/home/linuxbrew/.linuxbrew/bin
-/usr/lib/emscripten
-$HOME/.gem/ruby/2.1.0/bin
-$HOME/.gem/ruby/2.4.0/bin
-$HOME/.gem/ruby/2.6.0/bin
-$HOME/.gem/ruby/3.0.0/bin
 $HOME/.bin
-$HOME/.scripts
-$HOME/.go/bin
-$HOME/.yarn/bin
-$HOME/.config/yarn/global/node_modules/.bin
-$HOME/.local/bin
-$HOME/.rvm/bin
-$HOME/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/mailcatcher-0.7.1/bin
-$HOME/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/thin-1.5.1/lib
-$HOME/.cargo/bin
-/run/user/1000/fnm_multishells/683430_1661186430270/bin
+# $HOME/.yarn/bin
+# $HOME/.go/bin
+# $HOME/.config/yarn/global/node_modules/.bin
+# $HOME/.cargo/bin
 "
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export path="$(/bin/echo "$path" | /bin/sed 's/#.*$//' | /bin/sed '/^$/d' | /bin/sed 's/ //g' | /bin/tr '\n' ':')"
@@ -59,18 +27,22 @@ if [[ $(id -u) -eq 0 ]] ;then
     alias "$i"="sudo -E -u sudo $i"
   done
 else
-  for i in btrfs libinput powerpill mkfs.btrfs  mkinitcpio docker locale-gen modprobe usermod lvs lvresize lvremove resize2fs  gpasswd  groupdel useradd killall vgs vgchange cryptsetup ego epro cfdisk etc-update shutdown genkernel blkid ip df iw lscpu uname rc-update su cryptsetup pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo pacman-key
+  for i in btrfs libinput powerpill  reflector mkfs.btrfs  mkinitcpio docker locale-gen modprobe usermod lvs lvresize lvremove resize2fs  gpasswd  groupdel useradd killall vgs vgchange cryptsetup ego epro cfdisk etc-update shutdown genkernel blkid ip df iw lscpu uname rc-update su cryptsetup pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo pacman-key
     do
     alias "$i"="sudo -E $i"
   done
   fi
 
 # Install
-OS=$(cat /etc/os-release | grep ^ID | cut -d= -f2-)
+OS=$(cat /etc/os-release | grep ^ID= | cut -d= -f2-)
 case $OS in
-    artix|arch) 	alias i="pacman -S --noconfirm --overwrite \* --disable-download-timeout"
+    artix|arch|garuda) 	alias i="pacman -S --noconfirm --overwrite \* --disable-download-timeout"
                   alias ir="pacman -Rsu --noconfirm"
                   alias iu="pacman -Sy && powerpill -Su && paru -Su"
+# alias rmpkg="sudo pacman -Rdd"
+# alias cleanup='sudo pacman -Rns (pacman -Qtdq)' # Cleanup orphaned packages
+# alias fixpacman="sudo rm /var/lib/pacman/db.lck"
+# alias upd='/usr/bin/garuda-update'
                    	# alias ii="paru -S" ;;
                    	alias ii="yay -S --noconfirm" ;;
     funtoo)	alias i="emerge --autounmask --autounmask-write -v" ;;
@@ -87,13 +59,11 @@ nc="$(tput sgr0)"
 export PS1="\[$blue\][ \[$cyan\]\H \[$darkgrey\]\w\[$darkgrey\] \[$blue\]]\\[$darkgrey\]# \[$nc\]"
 export LD_PRELOAD=""
 
-[[ -d /opt/asdf-vm ]] && . /opt/asdf-vm/asdf.sh
+# [[ -d /opt/asdf-vm ]] && . /opt/asdf-vm/asdf.sh
 export GOPATH="$HOME/.go"
-export WEKA_HOME="$HOME/.wekafiles"
-export ANDROID_HOME=/opt/android-sdk
 
 #Manuais
-export EDITOR="hx"
+export EDITOR="helix"
 export TERMINAL=kitty
 export BROWSER=brave
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
@@ -101,19 +71,15 @@ export XDG_RUNTIME_DIR=/run/user/$(id -u)
 #export manvim="/usr/share/vim/$(ls /usr/share/vim | grep [1-9])/doc"
 export manmutt="/usr/share/doc/mutt"
 export archwiki="/usr/share/doc/arch-wiki/"
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-#eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 #Renames
 alias ls='ls --color=always -C --group-directories-first'
+alias l='exa --color=always --group-directories-first --icons' # preferred listing
+alias l.="exa -a | grep -E '^\.'"                                     # show only dotfiles
 #alias ls='colorls --sd'
 alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
 alias df='df -h'
 alias cp='cp -vr'
 alias bd=". bd -si"
@@ -122,21 +88,34 @@ alias shred="shred -zf"
 alias wget="wget -U 'noleak'"
 alias curl="curl --user-agent 'noleak'"
 alias ipinfo="curl ipinfo.io/ip"
-# alias tree="tree --noreport -C"
-alias tree="tree -C"
+alias tree="tree --noreport -C"
+# alias tree="tree -C"
 alias tail="tail --follow -n 30"
 alias g="git"
+alias please='sudo'
+alias hw='hwinfo --short'                          # Hardware Info
 
+# Replace some more things with better alternatives
+alias cat='bat --style header --style snip --style changes --style header'
+
+# Common use
+alias grubup="sudo update-grub"
+alias tarnow='tar -acf '
+alias untar='tar -xvf '
+alias wget='wget -c '
+alias psmem='ps auxf | sort -nr -k 4'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+alias ip="ip -color"
 
 #preguiças
-alias sn="sncli"
 alias q='exit'
 alias x='startx'
 alias kl='killall'
-alias yt='youtube-dl'
-alias ..='cd .. && ls'
-alias ...='cd ../.. && ls'
-alias ....='cd ../../.. && ls'
+alias ..='cd .. && l'
+alias ...='cd ../.. && l'
+alias ....='cd ../../.. && l'
+alias .....='cd ../../../.. && l'
+alias ......='cd ../../../../.. && l'
 
 #atalhos
 alias funtoomount="mount /dev/mapper/lvm-funtoo /mnt/funtoo && cd /mnt/funtoo && mount -t proc none proc && mount --rbind /sys sys && mount --rbind /dev dev"
@@ -157,36 +136,39 @@ alias ts='tmux attach-session -t'
 alias tn='tmux new -s'
 alias tl='tmux ls'
 
-# Static
-alias h='hugo server -D'
-alias hf="hugo server -D  --port 1314 --source $DIR_hff"
-alias he="hugo server -D --port 1315 --source $DIR_hee"
-
-#VirtualBox
-alias vb='VBoxManage'
-alias vc='VBoxManage controlvm'
-alias vw='VBoxManage controlvm windows'
-
 
 alias out="pkill -u $USER"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-#alias ls='colorls --sd'
 
 alias listfiles="find . -maxdepth 1 -type f,l -not -path '*/\.*' | sort"
 alias listdirs="find . -mindepth 1 -maxdepth 1 -type d -not -path '*/\.*' | sort"
 alias out="pkill -u $USER"
 alias gs='git status'
-#alias c="$@ source c"
 alias c="$@ source $HOME/.bin/c"
 #alias ranger="ranger --choosedir=$HOME/.rangerdir;cd "$(cat $HOME/.rangerdir)""
-alias cinnamonbackup="dconf dump /org/cinnamon/ > $HOME/.cinnamon.config"
-alias cinnamonrestore="dconf load /org/cinnamon/ < $HOME/.cinnamon.config"
 alias list-packages="pacman -Qet | awk {print $1}"
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" #Da erro no fish
 
-export FNM_MULTISHELL_PATH="/run/user/1000/fnm_multishells/683988_1661186569613"
-export FNM_VERSION_FILE_STRATEGY="local"
-export FNM_DIR="/home/toor/.local/share/fnm"
-export FNM_LOGLEVEL="info"
-export FNM_NODE_DIST_MIRROR="https://nodejs.org/dist"
-export FNM_ARCH="x64"
+
+alias big="expac -H M '%m\t%n' | sort -h | nl"     # Sort installed packages according to size in MB
+alias gitpkg='pacman -Q | grep -i "\-git" | wc -l' # List amount of -git packages
+
+# Get fastest mirrors
+alias mirror="reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+alias mirrord="reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
+alias mirrors="reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
+alias mirrora="reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
+
+
+alias helpme='cht.sh --shell'
+alias pacdiff='sudo -H DIFFPROG=meld pacdiff'
+alias tb='nc termbin.com 9999'
+
+# Get the error messages from journalctl
+alias jctl="journalctl -p 3 -xb"
+
+# Recent installed packages
+alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
+
+
+
+
