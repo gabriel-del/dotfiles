@@ -1,7 +1,7 @@
 [[ $- != *i* ]] && return
 # if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then exec startx ;fi
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] &&  /bin/startx
-[[ $(ps --no-header --pid=$PPID --format=cmd) != "fish" ]] && exec fish
+# [[ $(ps --no-header --pid=$PPID --format=cmd) != "fish" ]] && exec fish
 
 if [ -f ~/.aliases ]; then
 source ~/.aliases
@@ -16,8 +16,13 @@ fi
 
 
 # BEGIN_KITTY_SHELL_INTEGRATION
-if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
+# if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
 # END_KITTY_SHELL_INTEGRATION
+
+if test -n "$KITTY_INSTALLATION_DIR"; then
+    export KITTY_SHELL_INTEGRATION="enabled"
+    source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"
+fi
 
 
 

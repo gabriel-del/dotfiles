@@ -27,7 +27,7 @@ if [[ $(id -u) -eq 0 ]] ;then
     alias "$i"="sudo -E -u sudo $i"
   done
 else
-  for i in btrfs libinput powerpill  reflector mkfs.btrfs  mkinitcpio docker locale-gen modprobe usermod lvs lvresize lvremove resize2fs  gpasswd  groupdel useradd killall vgs vgchange cryptsetup ego epro cfdisk etc-update shutdown genkernel blkid ip df iw lscpu uname rc-update su cryptsetup pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo pacman-key
+  for i in btrfs waydroid libinput powerpill  reflector mkfs.btrfs  mkinitcpio docker locale-gen modprobe usermod lvs lvresize lvremove resize2fs  gpasswd  groupdel useradd killall vgs vgchange cryptsetup ego epro cfdisk etc-update shutdown genkernel blkid ip df iw lscpu uname rc-update su cryptsetup pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo pacman-key
     do
     alias "$i"="sudo -E $i"
   done
