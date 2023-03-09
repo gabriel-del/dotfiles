@@ -1,19 +1,23 @@
 #!/bin/bash
-LS () { 
-  if [ -x "$(command -v exa)" ] ;then  exa --color=always --group-directories-first --icons
-  elif [ -x "$(command -v colorls)" ] ;then  colorls --sd
-  else  ls --color=always -C --group-directories-first -w $(tput cols) 
-  fi
-}
+
 listdirs () { find . -mindepth 1 -maxdepth 1 -type d -not -path '*/\.*' | sort ;}
-if [[ $# -eq 1 ]] && [[ $1 =~ / || $1 =~ ^\.. ]] ;then
-  cd "$1" && LS
+if [[ $# -eq 1 ]] && [[ $1 =~ / || $1 =~ ^\.. ]] 
+  then
+  cd "$1"
 else
   dir="$( listdirs | grep -i "$(echo $1 | sed 's/\/$//g' )" | sed -n "$([[ -n $2 ]] && echo $2 || echo 1 )"p ;)"
-  if [ -z "$dir" ] ;then
+  if [ -z "$dir" ] 
+  then
     echo "Directory '$1' not fount"
   else
-    cd "$dir" && LS
+    cd "$dir"
   fi
 fi
 
+
+if [ -x "$(command -v exa)" ]
+  then COLUMNS=$(tput cols) exa --color=always --group-directories-first --icons
+elif [ -x "$(command -v colorls)" ] 
+  then  colorls --sd
+else  ls --color=always -C --group-directories-first -w $(tput cols) 
+fi
