@@ -3,5 +3,6 @@
     "workbench.colorTheme": "JellyFish",
     "files.autoSave": "afterDelay",
     "editor.tabSize": 2,
-    "editor.cursorStyle": "underline"
+    "editor.cursorStyle": "underline",
+    "terminal.external.linuxExec": "kitty"
 }

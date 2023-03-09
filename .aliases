@@ -44,7 +44,7 @@ case $OS in
 # alias fixpacman="sudo rm /var/lib/pacman/db.lck"
 # alias upd='/usr/bin/garuda-update'
                    	# alias ii="paru -S" ;;
-                   	alias ii="yay -S --noconfirm" ;;
+                   	alias ii="paru -S --nouseask" ;;
     funtoo)	alias i="emerge --autounmask --autounmask-write -v" ;;
     *) echo "$HOME/.aliases: Distribution not recognized" ;;
 esac
@@ -73,6 +73,12 @@ export manmutt="/usr/share/doc/mutt"
 export archwiki="/usr/share/doc/arch-wiki/"
 
 #Renames
+# alias c="$@ source $HOME/.bin/c"
+alias n="nnn -de -P p && . $HOME/.config/nnn/.lastd  && rm -f $HOME/.config/nnn/.lastd > /dev/null "
+export NNN_FIFO="/tmp/nnn.fifo"
+export NNN_PLUG='p:preview-tui;f:finder;o:fzopen;q:mocq;d:diffs;t:nmount;v:imgview'
+export NNN_ICONLOOKUP=1 
+export SPLIT='v'
 alias ls='ls --color=always -C --group-directories-first'
 alias l='exa --color=always --group-directories-first --icons' # preferred listing
 alias l.="exa -a | grep -E '^\.'"                                     # show only dotfiles
