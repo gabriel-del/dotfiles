@@ -4,5 +4,8 @@
     "files.autoSave": "afterDelay",
     "editor.tabSize": 2,
     "editor.cursorStyle": "underline",
-    "terminal.external.linuxExec": "kitty"
+    "terminal.external.linuxExec": "kitty",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "editor.wordWrap": "on"
 }

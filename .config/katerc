@@ -35,7 +35,7 @@ Tabbar Tab Limit=0
 
 [KFileDialog Settings]
 Recent Files[$e]=file:$HOME/lista.md,file:$HOME/lista.md
-Recent URLs[$e]=file:$HOME/
+Recent URLs[$e]=file:$HOME/,file:$HOME/Documents/
 detailViewIconSize=16
 
 [KTextEditor Document]
@@ -176,7 +176,7 @@ sortRole=0
 viewShade=56,81,113
 
 [lspclient]
-AllowedServerCommandLines=/usr/bin/bash-language-server start,/usr/bin/yaml-language-server --stdio
+AllowedServerCommandLines=/usr/bin/bash-language-server start,/usr/bin/texlab,/usr/bin/vscode-html-languageserver --stdio,/usr/bin/yaml-language-server --stdio
 AutoHover=true
 AutoImport=true
 BlockedServerCommandLines=

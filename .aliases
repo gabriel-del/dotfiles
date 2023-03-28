@@ -27,7 +27,7 @@ if [[ $(id -u) -eq 0 ]] ;then
     alias "$i"="sudo -E -u sudo $i"
   done
 else
-  for i in btrfs waydroid libinput powerpill  reflector mkfs.btrfs  mkinitcpio docker locale-gen modprobe usermod lvs lvresize lvremove resize2fs  gpasswd  groupdel useradd killall vgs vgchange cryptsetup ego epro cfdisk etc-update shutdown genkernel blkid ip df iw lscpu uname rc-update su cryptsetup pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo pacman-key
+  for i in trash rm btrfs waydroid libinput powerpill  reflector mkfs.btrfs  mkinitcpio docker locale-gen modprobe usermod lvs lvresize lvremove resize2fs  gpasswd  groupdel useradd killall vgs vgchange cryptsetup ego epro cfdisk etc-update shutdown genkernel blkid ip df iw lscpu uname rc-update su cryptsetup pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo pacman-key
     do
     alias "$i"="sudo -E $i"
   done
@@ -89,7 +89,9 @@ alias grep='grep --color=auto'
 alias df='df -h'
 alias cp='cp -vr'
 alias bd=". bd -si"
-alias rm='rm -rfv'
+alias trash="sudo -E trash -v"
+alias r="sudo -E trash -v"
+alias rm='sudo -E rm -rfv'
 alias shred="shred -zf"
 alias wget="wget -U 'noleak'"
 alias curl="curl --user-agent 'noleak'"
@@ -102,7 +104,7 @@ alias please='sudo'
 alias hw='hwinfo --short'                          # Hardware Info
 
 # Replace some more things with better alternatives
-alias cat='bat --style header --style snip --style changes --style header'
+alias bcat='bat --style header --style snip --style changes --style header'
 
 # Common use
 alias grubup="sudo update-grub"

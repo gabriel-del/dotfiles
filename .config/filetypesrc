@@ -1,5 +1,6 @@
 [EmbedSettings]
 embed-application/json=false
 embed-application/xml=false
+embed-text/html=false
 embed-text/markdown=false
 embed-video/mp4=false
