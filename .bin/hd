@@ -1,65 +1,43 @@
 #!/bin/bash
-#USAGE: hd [open|close] [hd|lvmhd] [a|b]
 
-partition="/dev/sd$([[ -n $3 ]] && echo "$3" || echo b)8"
-hd="$([[ -n $2 ]] && echo "$2" || echo hd)"
-#mnt="$HOME/PublicShare/mnt"
+print_help() { echo "usage: hd (o|c) (a|b|c) " ;}
+
+hd="sd$([[ -n $2 ]] && echo "$2" || echo a)"
 mnt="/mnt"
 
-print_help() { echo "usage: hd (o|c) (a|b|c) (hd)" ;}
 
 partitions_check() { 
-  while [ ! "$(lsblk "$partition")" ] ;do sleep 0.5 ;done 
-  echo "=> $partition found"  
+  while [ ! "$(lsblk "/dev/$hd")" ] ;do sleep 0.5 ;done 
+  echo "=> $hd found"  
 }
 
 luks_open() { 
-  [[ ! -b /dev/mapper/$hd ]] &&  sudo cryptsetup -v open "$partition" "$hd" --key-file /boot/.keep 
-  echo "=> Luks is open" 
+  [[ ! -b /dev/mapper/$hd ]] &&  sudo cryptsetup -v open "/dev/$hd" "$hd" --key-file /boot/.keep &&  echo "=> Luks is open" 
 }
 
 luks_close(){ 
-  [[ -b /dev/mapper/$hd ]] && sudo cryptsetup -v close "$hd"
-  echo "=> Luks is closed" 
+  [[ -b /dev/mapper/$hd ]] && sudo cryptsetup -v close "$hd" &&  echo "=> Luks is closed" 
 }
 
 partitions_mount(){
-  [[ -b /dev/mapper/$hd-media ]]  && sudo mount -v "/dev/mapper/$hd-media" "$mnt/$hd-media"
-  [[ -b /dev/mapper/$hd-media ]]  && sudo mount -v "/dev/mapper/$hd-home" "$mnt/$hd-home"
-  echo "=> partitions mounted"
+  [[ -b /dev/mapper/$hd ]]  && sudo mount -v "/dev/mapper/$hd" "$mnt" && echo "=> partition mounted"
 }
 
 partitions_umount(){
-  grep -q "/dev/mapper/$hd-media" /proc/mounts && sudo umount -v "$mnt/$hd-media"
-  grep -q "/dev/mapper/$hd-home" /proc/mounts && sudo umount -v "$mnt/$hd-home"
+  grep -q "/dev/mapper/$hd" /proc/mounts && sudo umount -v "$mnt"
   while  grep -q "/dev/mapper/$hd" /proc/mounts ;do sleep 0.5 ;done
-  echo "=> Partitions umounted"
+  echo "=> Partition umounted"
 }
 
-
-lvm_open() {
-  while [ ! -b "/dev/mapper/$hd" ] ;do sleep 0.5 ;done
-  [[ ! -b "/dev/mapper/$hd-media" ]] &&  sudo vgchange -v -a y "$hd"
-  while [ ! -b "/dev/mapper/$hd-media" ] ;do sleep 0.5 ;done
-  echo "=> LVM is open"
-}
-
-lvm_close() {
-  [[ -b "/dev/mapper/$hd-media" ]] && sudo vgchange -v -a n "$hd"
-  while [ -b "/dev/mapper/$hd-media" ] ;do sleep 0.5 ;done
-  echo "=> LVM is closed"
-}
 
 case $1 in
   o*)
   partitions_check || exit
   luks_open || exit
-  lvm_open || exit 
   partitions_mount || exit
   ;;
   c*)
   partitions_umount || exit
-  lvm_close || exit
   luks_close || exit
   ;;
   *)
