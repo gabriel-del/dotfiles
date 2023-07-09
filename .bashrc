@@ -12,7 +12,7 @@ fi
   . /usr/share/bash-completion/completions/*
 
 
-# [ -f  /opt/asdf-vm/asdf.sh ] && source /opt/asdf-vm/asdf.sh
+[ -f  /opt/asdf-vm/asdf.sh ] && . /opt/asdf-vm/asdf.sh
 
 
 # BEGIN_KITTY_SHELL_INTEGRATION

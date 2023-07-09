@@ -3,7 +3,10 @@
 #[[ -n $DISPLAY && $XDG_VTNR -eq 1 && $TERM =~ (xterm|st) ]] && tmux
 
 
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export path="
+./bin/
+$GEM_HOME/bin
 /usr/local/sbin
 /usr/local/bin
 /usr/bin
@@ -17,7 +20,6 @@ $HOME/.bin
 # $HOME/.config/yarn/global/node_modules/.bin
 # $HOME/.cargo/bin
 "
-export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export path="$(/bin/echo "$path" | /bin/sed 's/#.*$//' | /bin/sed '/^$/d' | /bin/sed 's/ //g' | /bin/tr '\n' ':')"
 
 # SUDO
@@ -27,7 +29,7 @@ if [[ $(id -u) -eq 0 ]] ;then
     alias "$i"="sudo -E -u sudo $i"
   done
 else
-  for i in trash rm btrfs waydroid libinput powerpill  reflector mkfs.btrfs  mkinitcpio docker locale-gen modprobe usermod lvs lvresize lvremove resize2fs  gpasswd  groupdel useradd killall vgs vgchange cryptsetup ego epro cfdisk etc-update shutdown genkernel blkid ip df iw lscpu uname rc-update su cryptsetup pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo pacman-key
+  for i in trash chown rm btrfs waydroid libinput powerpill compsize reflector mkfs.btrfs  mkinitcpio docker locale-gen modprobe usermod lvs lvresize lvremove resize2fs  gpasswd  groupdel useradd killall vgs vgchange cryptsetup ego epro cfdisk etc-update shutdown genkernel blkid ip df iw lscpu uname rc-update su cryptsetup pm-suspend pkill fdisk pacman fdisk systemctl nmcli mount umount emerge reboot grub-mkconfig visudo pacman-key
     do
     alias "$i"="sudo -E $i"
   done
@@ -44,7 +46,7 @@ case $OS in
 # alias fixpacman="sudo rm /var/lib/pacman/db.lck"
 # alias upd='/usr/bin/garuda-update'
                    	# alias ii="paru -S" ;;
-                   	alias ii="paru -S --nouseask" ;;
+                   	alias ii="paru -S --noconfirm" ;;
     funtoo)	alias i="emerge --autounmask --autounmask-write -v" ;;
     *) echo "$HOME/.aliases: Distribution not recognized" ;;
 esac
@@ -61,6 +63,7 @@ export LD_PRELOAD=""
 
 # [[ -d /opt/asdf-vm ]] && . /opt/asdf-vm/asdf.sh
 export GOPATH="$HOME/.go"
+export DELTA_PAGER="less --mouse"
 
 #Manuais
 export EDITOR="helix"

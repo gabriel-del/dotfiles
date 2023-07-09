@@ -58,7 +58,7 @@
 !/.config/rofi/**
 !/.config/sxhkd/**
 !/.config/syncthing/config.xml
-!/.config/vlc/vlcrc
+# !/.config/vlc/vlcrc
 !/.config/xfce4/**
 !/.config/discord/settings.json
 !/.config/helix/**
@@ -92,9 +92,10 @@
 
 
 !/.config/alacritty/**
-!/.config/autostart/**
+# !/.config/autostart/**
 !/.config/bleachbit/**
 !/.config/Code - OSS/User/settings.json
+!/.config/Code - OSS/User/keybindings.json
 !/.config/deluge/**
 !/.config/DisplayCAL/**
 !/.config/fastfetch/**
@@ -105,7 +106,7 @@
 !/.config/kdedefaults/**
 !/.config/Kvantum/**
 !/.config/latte/**
-!/.config/libreoffice/**
+# !/.config/libreoffice/**
 !/.config/mpv/mpv.conf
 !/.config/neofetch/**
 !/.config/octopi/**
@@ -113,7 +114,7 @@
 !/.config/smplayer/**
 !/.config/xsettingsd/**
 !/.config/akregatorrc
-!/.config/arkrc
+# !/.config/arkrc
 !/.config/baloofileinformationrc
 !/.config/baloofilerc
 !/.config/bluedevilglobalrc
@@ -128,7 +129,7 @@
 !/.config/kcminputrc
 !/.config/kconf_updaterc
 !/.config/kded5rc
-!/.config/kdeglobals
+# !/.config/kdeglobals
 !/.config/kfontinstuirc
 !/.config/kglobalshortcutsrc
 !/.config/khotkeysrc
@@ -145,7 +146,7 @@
 !/.config/ktimezonedrc
 !/.config/kwinrc
 !/.config/kwinrulesrc
-!/.config/kwritemetainfos
+# !/.config/kwritemetainfos
 !/.config/kwriterc
 !/.config/kxkbrc
 !/.config/lattedockrc
@@ -161,7 +162,7 @@
 !/.config/QtProject.conf
 !/.config/starship.toml
 !/.config/systemmonitorrc
-!/.config/systemsettingsrc
+# !/.config/systemsettingsrc
 !/.config/touchpadrc
 !/.config/touchpadxlibinputrc
 !/.config/trashrc

@@ -1,7 +1,7 @@
 <configuration version="37">
-    <folder id="4v91k-vx1eg" label="phone" path="/home/toor/Music/phone" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+    <folder id="loz0a-rr1ff" label="Cel-int" path="/home/toor/Public/cel-int" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
-        <device id="RN7KHO2-UTTRH3I-2FMZNME-WKU4RZ4-REVLINX-IA2E6YF-CKWAWUP-3LFCEAQ" introducedBy="">
+        <device id="OARQN3V-7YG4FSM-LQSALIA-2I6U4JX-SQGRHUA-KUVGJJA-TNX2D5W-KVV65QW" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="R2TGHPZ-GFW3FVF-7LVSOB5-4HFETDM-VHW7TRN-Q2ECJGI-JHX5NQJ-URBPSQA" introducedBy="">
@@ -43,17 +43,16 @@
             <maxTotalSize>4096</maxTotalSize>
         </xattrFilter>
     </folder>
-    <folder id="9q8kc-apup0" label="cel-int" path="/home/toor/Music/cel-int" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+    <folder id="t5079-lmh8o" label="Cel-sd" path="/home/toor/Public/cel-sd" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
-        <device id="RN7KHO2-UTTRH3I-2FMZNME-WKU4RZ4-REVLINX-IA2E6YF-CKWAWUP-3LFCEAQ" introducedBy="">
+        <device id="OARQN3V-7YG4FSM-LQSALIA-2I6U4JX-SQGRHUA-KUVGJJA-TNX2D5W-KVV65QW" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
-        <device id="5KDHNST-3LXQMVL-4HDAA3D-TZ4AAWK-XESVMEH-FSCINUT-WJ4JGTW-HVFH2QO" introducedBy="">
+        <device id="R2TGHPZ-GFW3FVF-7LVSOB5-4HFETDM-VHW7TRN-Q2ECJGI-JHX5NQJ-URBPSQA" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <minDiskFree unit="%">1</minDiskFree>
-        <versioning type="trashcan">
-            <param key="cleanoutDays" val="31"></param>
+        <versioning>
             <cleanupIntervalS>3600</cleanupIntervalS>
             <fsPath></fsPath>
             <fsType>basic</fsType>
@@ -84,56 +83,11 @@
         <syncXattrs>false</syncXattrs>
         <sendXattrs>false</sendXattrs>
         <xattrFilter>
-            <maxSingleEntrySize>0</maxSingleEntrySize>
-            <maxTotalSize>0</maxTotalSize>
+            <maxSingleEntrySize>1024</maxSingleEntrySize>
+            <maxTotalSize>4096</maxTotalSize>
         </xattrFilter>
     </folder>
-    <folder id="hw7sg-gkkuc" label="cel-sd" path="/home/toor/Music/cel-sd" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
-        <filesystemType>basic</filesystemType>
-        <device id="RN7KHO2-UTTRH3I-2FMZNME-WKU4RZ4-REVLINX-IA2E6YF-CKWAWUP-3LFCEAQ" introducedBy="">
-            <encryptionPassword></encryptionPassword>
-        </device>
-        <device id="5KDHNST-3LXQMVL-4HDAA3D-TZ4AAWK-XESVMEH-FSCINUT-WJ4JGTW-HVFH2QO" introducedBy="">
-            <encryptionPassword></encryptionPassword>
-        </device>
-        <minDiskFree unit="%">1</minDiskFree>
-        <versioning type="trashcan">
-            <param key="cleanoutDays" val="31"></param>
-            <cleanupIntervalS>3600</cleanupIntervalS>
-            <fsPath></fsPath>
-            <fsType>basic</fsType>
-        </versioning>
-        <copiers>0</copiers>
-        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
-        <hashers>0</hashers>
-        <order>random</order>
-        <ignoreDelete>false</ignoreDelete>
-        <scanProgressIntervalS>0</scanProgressIntervalS>
-        <pullerPauseS>0</pullerPauseS>
-        <maxConflicts>10</maxConflicts>
-        <disableSparseFiles>false</disableSparseFiles>
-        <disableTempIndexes>false</disableTempIndexes>
-        <paused>false</paused>
-        <weakHashThresholdPct>25</weakHashThresholdPct>
-        <markerName>.stfolder</markerName>
-        <copyOwnershipFromParent>false</copyOwnershipFromParent>
-        <modTimeWindowS>0</modTimeWindowS>
-        <maxConcurrentWrites>2</maxConcurrentWrites>
-        <disableFsync>false</disableFsync>
-        <blockPullOrder>standard</blockPullOrder>
-        <copyRangeMethod>standard</copyRangeMethod>
-        <caseSensitiveFS>false</caseSensitiveFS>
-        <junctionsAsDirs>false</junctionsAsDirs>
-        <syncOwnership>false</syncOwnership>
-        <sendOwnership>false</sendOwnership>
-        <syncXattrs>false</syncXattrs>
-        <sendXattrs>false</sendXattrs>
-        <xattrFilter>
-            <maxSingleEntrySize>0</maxSingleEntrySize>
-            <maxTotalSize>0</maxTotalSize>
-        </xattrFilter>
-    </folder>
-    <device id="RN7KHO2-UTTRH3I-2FMZNME-WKU4RZ4-REVLINX-IA2E6YF-CKWAWUP-3LFCEAQ" name="DEL-arch" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
+    <device id="OARQN3V-7YG4FSM-LQSALIA-2I6U4JX-SQGRHUA-KUVGJJA-TNX2D5W-KVV65QW" name="DEL-PC" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
         <paused>false</paused>
         <autoAcceptFolders>false</autoAcceptFolders>
@@ -144,27 +98,6 @@
         <remoteGUIPort>0</remoteGUIPort>
     </device>
     <device id="R2TGHPZ-GFW3FVF-7LVSOB5-4HFETDM-VHW7TRN-Q2ECJGI-JHX5NQJ-URBPSQA" name="2201117SG" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
-        <address>dynamic</address>
-        <paused>false</paused>
-        <autoAcceptFolders>false</autoAcceptFolders>
-        <maxSendKbps>0</maxSendKbps>
-        <maxRecvKbps>0</maxRecvKbps>
-        <maxRequestKiB>0</maxRequestKiB>
-        <untrusted>false</untrusted>
-        <remoteGUIPort>0</remoteGUIPort>
-    </device>
-    <device id="5KDHNST-3LXQMVL-4HDAA3D-TZ4AAWK-XESVMEH-FSCINUT-WJ4JGTW-HVFH2QO" name="Del-cel" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
-        <address>dynamic</address>
-        <paused>false</paused>
-        <autoAcceptFolders>false</autoAcceptFolders>
-        <maxSendKbps>0</maxSendKbps>
-        <maxRecvKbps>0</maxRecvKbps>
-        <ignoredFolder time="2022-06-18T21:43:08.094Z" id="ti2t7-ht3ak" label="cel-sd"></ignoredFolder>
-        <maxRequestKiB>0</maxRequestKiB>
-        <untrusted>false</untrusted>
-        <remoteGUIPort>0</remoteGUIPort>
-    </device>
-    <device id="72TBDLA-6T7EWZF-3536PII-O6QOIDP-VQWNSLG-XXHQL6U-6ZCOG3Z-VG7TPQK" name="2201117SG" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
         <paused>false</paused>
         <autoAcceptFolders>false</autoAcceptFolders>
@@ -232,7 +165,7 @@
     <defaults>
         <folder id="" label="" path="~" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
             <filesystemType>basic</filesystemType>
-            <device id="RN7KHO2-UTTRH3I-2FMZNME-WKU4RZ4-REVLINX-IA2E6YF-CKWAWUP-3LFCEAQ" introducedBy="">
+            <device id="OARQN3V-7YG4FSM-LQSALIA-2I6U4JX-SQGRHUA-KUVGJJA-TNX2D5W-KVV65QW" introducedBy="">
                 <encryptionPassword></encryptionPassword>
             </device>
             <minDiskFree unit="%">1</minDiskFree>

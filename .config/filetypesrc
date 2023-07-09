@@ -1,6 +1,17 @@
 [EmbedSettings]
 embed-application/json=false
+embed-application/x-godot-resource=false
+embed-application/x-shellscript=false
+embed-application/x-zerosize=false
 embed-application/xml=false
 embed-text/html=false
 embed-text/markdown=false
+embed-text/plain=false
 embed-video/mp4=false
+embed-video/mpeg=false
+embed-video/quicktime=false
+embed-video/webm=false
+embed-video/x-flv=false
+embed-video/x-matroska=false
+embed-video/x-ms-wmv=false
+embed-video/x-msvideo=false

@@ -7,10 +7,10 @@ if [[ "$PWD" == "$HOME" ]] ;then
   # dotfiles  add -vu .
   dotfiles  add -v .
   dotfiles commit -m "$([[ -z $@ ]] && echo $(date +%F=%T) || echo $@)"
-  dotfiles push
+  # dotfiles push
 else
   git add -v .
   git commit -m "$([[ -z $@ ]] && echo $(date +%F=%T) || echo $@)"
   # git push -u origin main
-  git push
+  # git push
 fi

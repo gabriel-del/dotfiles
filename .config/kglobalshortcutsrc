@@ -272,6 +272,12 @@ _launch=Meta+E,Meta+E,Dolphin
 _k_friendly_name=KCalc
 _launch=Launch (1),Launch (1),KCalc
 
+[org.kde.konsole.desktop]
+NewTab=none,none,Open a New Tab
+NewWindow=none,none,Open a New Window
+_k_friendly_name=Konsole
+_launch=Ctrl+Alt+T,Ctrl+Alt+T,Konsole
+
 [org.kde.krunner.desktop]
 RunClipboard=Alt+Shift+F2,Alt+Shift+F2,Run command on clipboard contents
 _k_friendly_name=KRunner
@@ -318,7 +324,7 @@ activate task manager entry 8=none,Meta+8,Activate Task Manager Entry 8
 activate task manager entry 9=none,Meta+9,Activate Task Manager Entry 9
 activate widget 2=none,none,Activate Application Launcher Widget
 activate widget 3=none,none,Activate Pager Widget
-activate widget 31=none,none,Activate Latte Tasks Widget
+activate widget 31=none,none,Activate Fokus Widget
 activate widget 9=none,none,Activate Application Launcher Widget
 clear-history=none,,Clear Clipboard History
 clipboard_action=none,Meta+Ctrl+X,Automatic Action Popup Menu

@@ -7,30 +7,35 @@ update_info=dolphin_detailsmodesettings.upd:rename-leading-padding
 ViewFont=Fira Sans,12,-1,5,50,0,0,0,0,0
 
 [General]
-AutoExpandFolders=true
 OpenExternallyCalledFolderInNewTab=true
+OpenNewTabAfterLastTab=true
 ShowToolTips=true
 ShowZoomSlider=false
 Version=202
 ViewPropsTimestamp=2023,2,18,22,55,44.721
 
 [IconsMode]
-PreviewSize=192
+PreviewSize=176
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false
 Places Icons Static Size=22
 
 [KPropertiesDialog]
-eDP-1 Height 1920x1080 eDP-1=540
-eDP-1 Width 1920x1080 eDP-1=479
+1920x1080 screen: Height=596
+1920x1080 screen: Width=532
+eDP-1 Height 1920x1080 eDP-1=596
+eDP-1 Width 1920x1080 eDP-1=532
 
 [MainWindow]
 MenuBar=Disabled
 ToolBarsMovable=Disabled
 
 [PreviewSettings]
-Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mltpreview,mobithumbnail,opendocumentthumbnail,palathumbcreator,gsthumbnail,rawthumbnail,svgthumbnail,resvgthumbnailer,ffmpegthumbs
+Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mltpreview,mobithumbnail,opendocumentthumbnail,palathumbcreator,gsthumbnail,rawthumbnail,svgthumbnail,resvgthumbnailer,textthumbnail,ffmpegthumbs
+
+[Shortcut Schemes]
+Current Scheme=Default
 
 [ViewPropertiesDialog]
 eDP-1 Height 1920x1080 eDP-1=358

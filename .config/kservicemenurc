@@ -72,6 +72,7 @@ extract_odd=true
 extract_range=true
 extractfileitemaction=true
 favicons=true
+fileitemactioninsyncplugin=true
 flip=true
 flop=true
 forgetfileitemaction=true

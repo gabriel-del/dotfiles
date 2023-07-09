@@ -103,7 +103,7 @@ TouchBorderActivate=9
 padding=5
 
 [Tiling][213a9620-187e-58a6-b80b-85d8fb95dfce]
-tiles={"layoutDirection":"vertical","tiles":[{"height":0.7277777777777777,"layoutDirection":"floating","tiles":[{"height":0.1694444444444445,"width":0.3,"x":0.05,"y":0.05},{"height":0.15,"width":0.30000000000000004,"x":0.1,"y":0.1},{"height":0.25,"layoutDirection":"vertical","tiles":[{"height":0.15},{"height":0.725}],"width":0.3,"x":0.15000000000000002,"y":0.15000000000000002}]},{"height":0.27222222222222225}]}
+tiles={"layoutDirection":"vertical","tiles":[{"height":0.7277777777777777,"layoutDirection":"floating","tiles":[{"height":0.1694444444444445,"width":0.3,"x":0.05,"y":0.05},{"height":0.15,"width":0.30000000000000004,"x":0.1,"y":0.1},{"height":0.25,"layoutDirection":"vertical","tiles":[{"height":0.15000000000000002},{"height":0.15}],"width":0.3,"x":0.15000000000000002,"y":0.15000000000000002}]},{"height":0.27222222222222225}]}
 
 [Windows]
 BorderlessMaximizedWindows=true

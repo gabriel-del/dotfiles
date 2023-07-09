@@ -1,6 +1,9 @@
 [AC]
 icon=battery-charging
 
+[AC][BrightnessControl]
+value=1
+
 [AC][HandleButtonEvents]
 lidAction=64
 powerButtonAction=1

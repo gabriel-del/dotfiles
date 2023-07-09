@@ -20,11 +20,11 @@ luks_close(){
 }
 
 partitions_mount(){
-  [[ -b /dev/mapper/$hd ]]  && sudo mount -v "/dev/mapper/$hd" "$mnt" && echo "=> partition mounted"
+  [[ -b /dev/mapper/$hd ]]  && sudo mkdir -p "$mnt/$hd" && sudo mount -v -o compress=zstd:15 "/dev/mapper/$hd" "$mnt/$hd" && echo "=> partition mounted"
 }
 
 partitions_umount(){
-  grep -q "/dev/mapper/$hd" /proc/mounts && sudo umount -v "$mnt"
+  grep -q "/dev/mapper/$hd" /proc/mounts && sudo umount -v "$mnt/$hd"
   while  grep -q "/dev/mapper/$hd" /proc/mounts ;do sleep 0.5 ;done
   echo "=> Partition umounted"
 }

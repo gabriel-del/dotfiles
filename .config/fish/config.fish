@@ -5,7 +5,7 @@ if test -f /usr/share/fish/vendor_functions.d/fisher.fish
   end
 end
 
-# [ -f /opt/asdf-vm/asdf.fish ] && source /opt/asdf-vm/asdf.fish
+[ -f /opt/asdf-vm/asdf.fish ] && source /opt/asdf-vm/asdf.fish
 
 if set -q KITTY_INSTALLATION_DIR
     set --global KITTY_SHELL_INTEGRATION enabled
